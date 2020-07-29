@@ -8,7 +8,7 @@ def done():
 def msg(message):
     print(dash, message, dots, dash)
 
-now = str(datetime.datetime.now())
+now = str(datetime.datetime.now()).split(" ")[0]
 dash = "\n-----------------------------\n"
 dots = "..."
 
