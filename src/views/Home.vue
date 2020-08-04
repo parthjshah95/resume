@@ -5,12 +5,14 @@
       <div class="image-overlay"></div>
       <img class="photo" src="../assets/me.jpg">
       <h1>PARTH SHAH</h1>
-      <h4>Full stack | Machine learning </h4>
-      <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe>
+      <h4>Machine learning | Full stack</h4>
+      <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
+      <img class="down blinking" src="../assets/keyboard-down-arrow.png">
     </div>
     <div class="bg-wh">
-      <h2>Experience</h2>
-      <ExperienceCard></ExperienceCard>
+      <h2 data-aos="zoom-in">Experience</h2>
+      <!-- <ExperienceCard></ExperienceCard> -->
+      <ExperienceCard v-bind:properties="experience[0]"></ExperienceCard>
       <!-- <div class="container temp" data-aos="zoom-in">
         lorem ipsum dolor si amet
       </div> -->
@@ -22,20 +24,46 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
+import resume_data from '@/data.json'
 
 export default {
   name: 'Home',
   components: {
     // HelloWorld,
     ExperienceCard
+  },
+  data(){
+    return {
+        "experience":[
+            {
+                "position": "Research Assistant",
+                "institute": "University of Florida",
+                "description": "Advisors: Dr. Ranka and Dr. Rangarajan",
+                "time": "Oct 2019 - present",
+                "collapsed": false,
+                "projects": []
+            }
+        ]
+    };
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
+$arrow-size: 70px;
+
 html {
   overflow-x: hidden;
   font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+@keyframes blink{
+    0%  {opacity: 1;}
+    50% {opacity: 0;}
+    100%{opacity: 1;}
+}
+.blinking{
+    animation:blink 1.2s infinite;
 }
 .cont-bleed{
   width:100%;
@@ -72,7 +100,6 @@ $photo-size: 200px;
     transform: scale(1.05);
   }
 }
-$arrow-size: 30px;
 .down{
   position: fixed;
   bottom:0px;
@@ -109,7 +136,7 @@ h2{
   margin: 0px;
   padding: 20px;
   z-index: 1;
-  height: 500px;
+  min-height: 500px;
 }
 .temp{
   width: 700px;
