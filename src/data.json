@@ -4,16 +4,18 @@
             "img": "UF_logo.jpg",
             "position": "Research assistant",
             "institute": "University of Florida",
-            "description": "Advisors: Dr. Ranka and Dr. Rangarajan",
-            "time": "Oct 2019 - present",
+            "description": "Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
+            "time": "Oct 2019 - Present",
+            "timeCalc": "10 mos",
             "projects": ["vae"]
         },
         {
             "img": "UF_logo.jpg",
             "position": "Graduate assistant",
             "institute": "University of Florida",
-            "description": "Advisor: Dr. Rashidi",
+            "description": "Advisor: <a href=\"https://www.bme.ufl.edu/labs/rashidi/\"> Dr. Rashidi</a>",
             "time": "Jan 2020 - May 2020",
+            "timeCalc": "4 mos",
             "projects": []
         },
         {
@@ -21,6 +23,7 @@
             "position": "Senior software engineer",
             "institute": "Here Technologies",
             "time": "Mar 2019 - Jul 2019",
+            "timeCalc": "4 mos",
             "projects": []
         },
         {
@@ -28,6 +31,7 @@
             "position": "Software engineer 2",
             "institute": "Here Technologies",
             "time": "Jul 2017 - Feb 2019",
+            "timeCalc": "1 yr 8 mos",
             "projects": []
         }
     ],

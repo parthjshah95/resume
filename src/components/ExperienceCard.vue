@@ -5,13 +5,15 @@
             <img class="icon" :src="require(`../assets/${properties.img}`)">
             <!-- <img class="icon" src="../assets/UF_logo.jpg"> -->
             <div class="info">
+                <div class="institute" v-if="bigScreen"><b>{{properties.institute}}</b></div>
+                <div class="time-calc" v-if="bigScreen"><i>{{properties.timeCalc}}</i></div>
                 <div v-bind:class="bigScreen? 'time-top': time"><i>{{properties.time}}</i></div>
                 <div class="position">{{properties.position}}</div>
-                <div class="institute" v-if="bigScreen"><b>{{properties.institute}}</b></div>
-                <div>{{properties.description}}</div>
+                <div v-if="bigScreen" v-html="properties.description"></div>
             </div>
         </div>
         <div class="down-div" v-on:click="toggleProjects()" v-if="properties.collapsed"> 
+            <span class="down-desc">projects</span>
             <img class="down" src="../assets/keyboard-down-arrow.png">
         </div>
         <div class="projects" v-if="!properties.collapsed">
@@ -89,6 +91,7 @@ $project-card-aspect-ratio: 1.6;
     // left: 0px;
     width: $card-height;
     height: $card-height;
+    border-right:0.5px solid #ccc;
 }
 .primary{
     max-width: $card-max-width;
@@ -123,14 +126,19 @@ $margin:10px;
 .time{
     font-size: 1.0rem;
     color: $orange;
-    text-transform: uppercase;
     margin: 5px 0px;
 }
 .time-top{
     @extend .time;
     float: right;
     margin-right: 5px;
-    top: 0px;
+    display: inline-block;
+}
+.time-calc{
+    @extend .time-top;
+    font-size: 0.8rem;
+    color: gray;
+    margin-top: 8px;
 }
 .projects{
     max-width: $card-max-width - 2*$projects-margin;
@@ -141,16 +149,18 @@ $margin:10px;
     transition: 0.3s;
     overflow-x: auto;
 }
-.collapsed{
-    height:20px;
-}
 .down-div{
     cursor: pointer;
     max-width: $card-max-width;
     width:100%;
     height: $down-arrow-size;
-    vertical-align: middle;
     margin-top: 5px;
+    overflow: hidden;   
+}
+.down-desc{
+    display: inline-block;
+    margin-top: 5px;
+    vertical-align: top;
 }
 .down{
     display:inline-block;
@@ -173,7 +183,7 @@ $margin:10px;
     @extend .card;
     height: $card-height;
     width: $project-card-aspect-ratio * $card-height;
-    margin: 15px;
+    margin: 12px;
     padding: 5px;
     z-index:3;
     cursor: pointer;
