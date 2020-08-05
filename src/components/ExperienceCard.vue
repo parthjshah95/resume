@@ -1,17 +1,16 @@
 <template>
-    <div data-aos="zoom-in">
+    <!-- <div data-aos="zoom-in"> -->
     <div v-bind:class="properties.collapsed? 'card-collapsed': 'card'">
         <div class="primary">
             <img class="icon" :src="require(`../assets/${properties.img}`)">
             <!-- <img class="icon" src="../assets/UF_logo.jpg"> -->
             <div class="info">
+                <div v-bind:class="bigScreen? 'time-top': time"><i>{{properties.time}}</i></div>
                 <div class="position">{{properties.position}}</div>
                 <div class="institute" v-if="bigScreen"><b>{{properties.institute}}</b></div>
-                <div v-bind:class="bigScreen? 'time-top': time"><i>{{properties.time}}</i></div>
                 <div>{{properties.description}}</div>
             </div>
         </div>
-        <br>
         <div class="down-div" v-on:click="toggleProjects()" v-if="properties.collapsed"> 
             <img class="down" src="../assets/keyboard-down-arrow.png">
         </div>
@@ -26,7 +25,7 @@
             </div>
         </div>
     </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script>
@@ -85,14 +84,15 @@ $project-card-aspect-ratio: 1.6;
     transition: 0.3s;
 }
 .icon{
-    position:absolute;
-    left: 0px;
+    float:left;
+    // position:absolute;
+    // left: 0px;
     width: $card-height;
     height: $card-height;
 }
 .primary{
     max-width: $card-max-width;
-    position:absolute;
+    // position:absolute;
     overflow: hidden;
     border-radius: $border-radius;
     height: $card-height;
@@ -102,11 +102,12 @@ $project-card-aspect-ratio: 1.6;
 }
 $margin:10px;
 .info{
-    position: absolute;
-    left: $card-height;
+    // position: absolute;
     height: $card-height - 20px;
     width: calc(100% - #{$card-height+2*$margin});
     margin: $margin;
+    margin-left: $card-height;
+    padding-left: 10px;
     text-align: left;
 }
 .position{
@@ -127,14 +128,13 @@ $margin:10px;
 }
 .time-top{
     @extend .time;
-    position: absolute;
-    right: 5px;
+    float: right;
+    margin-right: 5px;
     top: 0px;
 }
 .projects{
     max-width: $card-max-width - 2*$projects-margin;
-    position: absolute;
-    top: $card-height;
+    // margin-top: $card-height;
     height: 1.5*$card-height;
     padding: 0px $projects-margin;
     width: calc(100% - #{2*$projects-margin});
@@ -148,13 +148,9 @@ $margin:10px;
     cursor: pointer;
     max-width: $card-max-width;
     width:100%;
-    position: absolute;
-    bottom: 0;
     height: $down-arrow-size;
-    font-size: 0.8rem;
-    // line-height: $down-arrow-size;
-    // text-align: center;
     vertical-align: middle;
+    margin-top: 5px;
 }
 .down{
     display:inline-block;
@@ -164,11 +160,8 @@ $margin:10px;
 .up-div{
     cursor: pointer;
     max-width: $card-max-width - 2*$projects-margin;
-    width: calc(100% - #{2*$projects-margin});
-    position: fixed;
-    bottom: 0;
+    width: 100%;
     height: $up-arrow-size;
-    font-size: 0.8rem;
     z-index: 3;
 }
 .up{

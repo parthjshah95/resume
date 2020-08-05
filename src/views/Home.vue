@@ -11,11 +11,9 @@
     </div>
     <div class="bg-wh">
       <h2 data-aos="zoom-in">Experience</h2>
-      <!-- <ExperienceCard></ExperienceCard> -->
-      <ExperienceCard v-for="exp in experience" v-bind:cardData="exp"></ExperienceCard>
-      <!-- <div class="container temp" data-aos="zoom-in">
-        lorem ipsum dolor si amet
-      </div> -->
+      <div data-aos="zoom-in">
+        <ExperienceCard v-for="exp in experience" v-bind:cardData="exp"></ExperienceCard>
+      </div>
     </div>
   </div>
 </template>
