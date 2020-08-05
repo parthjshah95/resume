@@ -2,26 +2,28 @@
     <div data-aos="zoom-in">
     <div v-bind:class="properties.collapsed? 'card-collapsed': 'card'">
         <div class="primary">
-            <img class="icon" src="../assets/UF_logo.jpg">
+            <img class="icon" :src="require(`../assets/${properties.img}`)">
+            <!-- <img class="icon" src="../assets/UF_logo.jpg"> -->
             <div class="info">
                 <div class="position">{{properties.position}}</div>
-                <div class="institute"><b>{{properties.institute}}</b></div>
-                <div class="description">{{properties.description}}</div>
-                <div class="time"><i>{{properties.time}}</i></div>
+                <div class="institute" v-if="bigScreen"><b>{{properties.institute}}</b></div>
+                <div v-bind:class="bigScreen? 'time-top': time"><i>{{properties.time}}</i></div>
+                <div>{{properties.description}}</div>
             </div>
         </div>
         <br>
         <div class="down-div" v-on:click="toggleProjects()" v-if="properties.collapsed"> 
-            <span class="down-desc">projects:</span>
             <img class="down" src="../assets/keyboard-down-arrow.png">
         </div>
         <div class="projects" v-if="!properties.collapsed">
-            <div class='left-arrow'></div>
+            <!-- <img class='left-arrow' src="../assets/left-arrow.svg"></img> -->
             <div class="project-card"  data-aos="fade-down"> 
                 <div>Lorem ipsum dolor sit amet</div>
             </div>
-            <div class='right-arrow'></div>
-            <img class="down"  v-on:click="toggleProjects()" src="../assets/keyboard-up-arrow.png">            
+            <!-- <img class='right-arrow' src="../assets/right-arrow.svg"></img> -->
+            <div class="up-div" v-on:click="toggleProjects()">
+                <img class="up" src="../assets/keyboard-up-arrow.svg">
+            </div>
         </div>
     </div>
     </div>
@@ -31,16 +33,24 @@
 export default {
     data(){
         return{
+            properties: this.cardData,
             card: "card",
-            'card-collapsed': "card-collapsed"
+            'card-collapsed': "card-collapsed",
+            time: "time",
+            'time-top': "time-top",
         }
     },
     props:[
-        'properties'
+        'cardData'
     ],
     methods:{
         toggleProjects(){
-            this.properties.collapsed = !this.properties.collapsed
+            this.properties.collapsed = !this.properties.collapsed;
+        }
+    },
+    computed: {
+        bigScreen(){
+            return this.$parent.windowWidth > 600;
         }
     }
 }
@@ -48,18 +58,26 @@ export default {
 
 <style lang="scss" scoped>
 
-$card-height: 100px;
+$card-height: 110px;
 $orange: #e54304;
 $border-radius: 10px;
 $box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-$box-shadow-highlight: 0 5px 25px rgba(0,0,0,0.19), 0 3px 10px rgba(0,0,0,0.23);
+$box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
+$card-max-width: 700px;
+$down-arrow-size: 30px;
+$up-arrow-size: 15px;
+$projects-margin: 25px;
+$side-arrow-paddings: 5px;
+$project-card-aspect-ratio: 1.6;
 
 .card{
-    // margin:10px;
+    margin: auto;
+    margin-bottom: 30px;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     height: 2.5*$card-height;
     transition: 0.3s;
+    max-width: $card-max-width;
 }
 .card-collapsed{
     @extend .card;
@@ -73,6 +91,7 @@ $box-shadow-highlight: 0 5px 25px rgba(0,0,0,0.19), 0 3px 10px rgba(0,0,0,0.23);
     height: $card-height;
 }
 .primary{
+    max-width: $card-max-width;
     position:absolute;
     overflow: hidden;
     border-radius: $border-radius;
@@ -101,96 +120,113 @@ $margin:10px;
     text-transform: uppercase;
 }
 .time{
-    position: absolute;
-    right: 5px;
-    top: 5px;
     font-size: 1.0rem;
     color: $orange;
     text-transform: uppercase;
+    margin: 5px 0px;
+}
+.time-top{
+    @extend .time;
+    position: absolute;
+    right: 5px;
+    top: 0px;
 }
 .projects{
+    max-width: $card-max-width - 2*$projects-margin;
     position: absolute;
     top: $card-height;
     height: 1.5*$card-height;
-    padding: 0px 25px;
-    width: calc(100% - 50px);
+    padding: 0px $projects-margin;
+    width: calc(100% - #{2*$projects-margin});
     transition: 0.3s;
+    overflow-x: auto;
 }
 .collapsed{
     height:20px;
 }
-$down-arrow-size: 30px;
 .down-div{
     cursor: pointer;
-}
-.down-desc{
-    @extend .down-div;
-    font-size: 0.8rem;
-    text-align: center;
+    max-width: $card-max-width;
+    width:100%;
     position: absolute;
-    padding-bottom: 8px;
-    bottom:0;
-    right:0;
-    left:0;
-    z-index: -1;
+    bottom: 0;
+    height: $down-arrow-size;
+    font-size: 0.8rem;
+    // line-height: $down-arrow-size;
+    // text-align: center;
+    vertical-align: middle;
 }
 .down{
-    @extend .down-div;
     display:inline-block;
-    position: absolute;
-    bottom: 0px;
-    left: calc(50% + #{$down-arrow-size/2});
     width: $down-arrow-size;
+    z-index: 0;
+}
+.up-div{
+    cursor: pointer;
+    max-width: $card-max-width - 2*$projects-margin;
+    width: calc(100% - #{2*$projects-margin});
+    position: fixed;
+    bottom: 0;
+    height: $up-arrow-size;
+    font-size: 0.8rem;
+    z-index: 3;
+}
+.up{
+    display:inline-block;
+    width: $up-arrow-size;
+    z-index: 0;
 }
 .project-card{
     @extend .card;
-    height:$card-height;
-    margin-top: 18px;
-    z-index:0;
-    background-color:white;
-    width: 1.6* $card-height;
+    height: $card-height;
+    width: $project-card-aspect-ratio * $card-height;
+    margin: 15px;
     padding: 5px;
+    z-index:3;
     cursor: pointer;
     transition: 0.3s;
     &:hover{
-        transform: scale(1.05);
+        margin: 15px - (0.025 * $card-height);
+        padding: 5px + (0.025 * $card-height);
         box-shadow: $box-shadow-highlight;
+    }
+    &:active{
+        margin: 15px;
+        padding: 5px;
+        box-shadow: $box-shadow;
     }
 }
 .arrow{
     position: absolute;
-    width: 25px;
+    width: 15px;
     height: $card-height;
     top:0;
     bottom:0;
     color: gray;
     transition: 0.3s;
-    padding-top: $card-height/2;
-    &:after{
-        // vertical-align: middle;
-        content: '\02C2';
-        // font-weight:5000;
-    }
+    padding: $card-height/4 0px;
+    z-index: 0;
     &:hover{
         cursor: pointer;
-        background-color: lightgray;
+        background-color: #ddd;
         color: black;
+    }
+    &:active{
+        background-color: #bbb;
     }
 }
 .left-arrow{
     @extend .arrow;
-    margin-right: 5px;
+    padding-right: 10px;
     left: 0;
+    padding-left: $side-arrow-paddings;
     border-radius: 0px 0px 0px $border-radius;
-
 }
 .right-arrow{
     @extend .arrow;
-    margin-left: 5px;
-    right:0;
+    padding-left: 10px;
+    right: 0;
+    padding-right: $side-arrow-paddings;
     border-radius: 0px 0px $border-radius 0px;
-    &:after{
-        content: '\02C3';
-    }
 }
 </style>

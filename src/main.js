@@ -11,7 +11,22 @@ new Vue({
   router,
   store,
   created(){
-    AOS.init()
+    AOS.init();
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+  data(){
+    return {
+      windowWidth: 0
+    };
+  },
+  methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    }
   },
   render: h => h(App)
 }).$mount('#app')

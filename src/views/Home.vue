@@ -12,7 +12,7 @@
     <div class="bg-wh">
       <h2 data-aos="zoom-in">Experience</h2>
       <!-- <ExperienceCard></ExperienceCard> -->
-      <ExperienceCard v-bind:properties="experience[0]"></ExperienceCard>
+      <ExperienceCard v-for="exp in experience" v-bind:cardData="exp"></ExperienceCard>
       <!-- <div class="container temp" data-aos="zoom-in">
         lorem ipsum dolor si amet
       </div> -->
@@ -33,18 +33,15 @@ export default {
     ExperienceCard
   },
   data(){
-    return {
-        "experience":[
-            {
-                "position": "Research Assistant",
-                "institute": "University of Florida",
-                "description": "Advisors: Dr. Ranka and Dr. Rangarajan",
-                "time": "Oct 2019 - present",
-                "collapsed": false,
-                "projects": []
-            }
-        ]
-    };
+    resume_data.experience.forEach(e => {
+      e['collapsed'] = 'true';
+    });
+    return resume_data;
+  },
+  computed:{
+    windowWidth() {
+      return this.$parent.$parent.windowWidth;
+    }
   }
 }
 </script>
@@ -136,7 +133,7 @@ h2{
   margin: 0px;
   padding: 20px;
   z-index: 1;
-  min-height: 500px;
+  min-height: 5000px;
 }
 .temp{
   width: 700px;

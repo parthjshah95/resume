@@ -1,12 +1,44 @@
 {
     "experience":[
         {
-            "position": "",
-            "institute": "",
-            "description": "",
-            "time": "",
-            "collapsed": true,
+            "img": "UF_logo.jpg",
+            "position": "Research assistant",
+            "institute": "University of Florida",
+            "description": "Advisors: Dr. Ranka and Dr. Rangarajan",
+            "time": "Oct 2019 - present",
+            "projects": ["vae"]
+        },
+        {
+            "img": "UF_logo.jpg",
+            "position": "Graduate assistant",
+            "institute": "University of Florida",
+            "description": "Advisor: Dr. Rashidi",
+            "time": "Jan 2020 - May 2020",
+            "projects": []
+        },
+        {
+            "img": "HERE_logo.png",
+            "position": "Senior software engineer",
+            "institute": "Here Technologies",
+            "time": "Mar 2019 - Jul 2019",
+            "projects": []
+        },
+        {
+            "img": "HERE_logo.png",
+            "position": "Software engineer 2",
+            "institute": "Here Technologies",
+            "time": "Jul 2017 - Feb 2019",
             "projects": []
         }
-    ]
+    ],
+    "projects": {
+        "vae": {
+            "title":"",
+            "img":{
+                "small": "",
+                "large": ""
+            },
+            "desc":""
+        }
+    }
 }
