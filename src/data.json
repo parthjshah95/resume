@@ -7,6 +7,7 @@
             "description": "Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
             "time": "Oct 2019 - Present",
             "timeCalc": "10 mos",
+            "place": "Gainesville, Fl",
             "projects": ["vae"]
         },
         {
@@ -16,6 +17,7 @@
             "description": "Advisor: <a href=\"https://www.bme.ufl.edu/labs/rashidi/\"> Dr. Rashidi</a>",
             "time": "Jan 2020 - May 2020",
             "timeCalc": "4 mos",
+            "place": "Gainesville, Fl",
             "projects": []
         },
         {
@@ -24,6 +26,7 @@
             "institute": "Here Technologies",
             "time": "Mar 2019 - Jul 2019",
             "timeCalc": "4 mos",
+            "place": "Mumbai, India",
             "projects": []
         },
         {
@@ -32,6 +35,7 @@
             "institute": "Here Technologies",
             "time": "Jul 2017 - Feb 2019",
             "timeCalc": "1 yr 8 mos",
+            "place": "Mumbai, India",
             "projects": []
         }
     ],

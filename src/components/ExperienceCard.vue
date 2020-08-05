@@ -5,11 +5,12 @@
             <img class="icon" :src="require(`../assets/${properties.img}`)">
             <!-- <img class="icon" src="../assets/UF_logo.jpg"> -->
             <div class="info">
-                <div class="institute" v-if="bigScreen"><b>{{properties.institute}}</b></div>
+                <div class="institute"><b>{{properties.institute}}</b></div>
                 <div class="time-calc" v-if="bigScreen"><i>{{properties.timeCalc}}</i></div>
                 <div v-bind:class="bigScreen? 'time-top': time"><i>{{properties.time}}</i></div>
                 <div class="position">{{properties.position}}</div>
-                <div v-if="bigScreen" v-html="properties.description"></div>
+                <div class="description" v-if="bigScreen" v-html="properties.description"></div>
+                <div class="description" v-if="bigScreen">{{properties.place}}</div>
             </div>
         </div>
         <div class="down-div" v-on:click="toggleProjects()" v-if="properties.collapsed"> 
@@ -139,6 +140,9 @@ $margin:10px;
     font-size: 0.8rem;
     color: gray;
     margin-top: 8px;
+}
+.description{
+    margin: 5px 0px;
 }
 .projects{
     max-width: $card-max-width - 2*$projects-margin;
