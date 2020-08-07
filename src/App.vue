@@ -9,8 +9,43 @@
 </template>
 
 <style lang="scss">
+
+$junction-dir: "assets/fonts/junction/";
+@font-face {
+  font-family: 'Junction';
+  src: url($junction-dir+'junction-regular.eot'), /* IE9 Compat Modes */
+       url($junction-dir+'junction-regular.woff') format('woff'), /* Modern Browsers */
+       url($junction-dir+'junction-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+// $junction-dir: "assets/fonts/raleway/";
+// @font-face {
+//   font-family: 'Raleway';
+//   src: url($junction-dir+'raleway_thin-webfont.eot'), /* IE9 Compat Modes */
+//        url($junction-dir+'raleway_thin-webfont.woff') format('woff'), /* Modern Browsers */
+//        url($junction-dir+'raleway_thin-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+// }
+
+$junction-dir: "assets/fonts/Aftasans/";
+@font-face {
+  font-family: 'Aftasans';
+  src: url($junction-dir+'AftaSansThin-Regular.eot'), /* IE9 Compat Modes */
+       url($junction-dir+'AftaSansThin-Regular.woff') format('woff'), /* Modern Browsers */
+       url($junction-dir+'AftaSansThin-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+$junction-dir: "assets/fonts/Amaranth/";
+@font-face {
+  font-family: 'Amaranth';
+  src: url($junction-dir+'Amaranth-Bold.eot'), /* IE9 Compat Modes */
+       url($junction-dir+'Amaranth-Bold.woff') format('woff'), /* Modern Browsers */
+       url($junction-dir+'Amaranth-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Aftasans", sans-serif;
+  font-style: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

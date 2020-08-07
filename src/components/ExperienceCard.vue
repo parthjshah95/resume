@@ -5,10 +5,12 @@
             <img class="icon" :src="require(`../assets/${properties.img}`)">
             <!-- <img class="icon" src="../assets/UF_logo.jpg"> -->
             <div class="info">
-                <div class="institute"><b>{{properties.institute}}</b></div>
-                <div class="time-calc" v-if="bigScreen"><i>{{properties.timeCalc}}</i></div>
-                <div v-bind:class="bigScreen? 'time-top': time"><i>{{properties.time}}</i></div>
+                <div v-bind:class="bigScreen? 'time-top': 'time-div'">
+                    <i class="time">{{properties.time}}</i>
+                    <div class="time-calc" v-if="bigScreen"><i>{{properties.timeCalc}}</i></div>            
+                </div>
                 <div class="position">{{properties.position}}</div>
+                <div class="institute"><b>{{properties.institute}}</b></div>
                 <div class="description" v-if="bigScreen" v-html="properties.description"></div>
                 <div class="description" v-if="bigScreen">{{properties.place}}</div>
             </div>
@@ -52,7 +54,7 @@ export default {
     },
     computed: {
         bigScreen(){
-            return this.$parent.windowWidth > 600;
+            return this.$parent.bigScreen;
         }
     }
 }
@@ -60,12 +62,12 @@ export default {
 
 <style lang="scss" scoped>
 
+$card-max-width: 700px;
 $card-height: 110px;
-$orange: #e54304;
+$orange: #283593;
 $border-radius: 10px;
 $box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
-$card-max-width: 700px;
 $down-arrow-size: 30px;
 $up-arrow-size: 15px;
 $projects-margin: 25px;
@@ -115,25 +117,29 @@ $margin:10px;
     text-align: left;
 }
 .position{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: black;
+    text-transform: capitalize;
 }
 .institute{
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: $orange;
     margin: 7px 0px;
     text-transform: uppercase;
 }
-.time{
+.time-div{
     font-size: 1.0rem;
-    color: $orange;
+    // color: $orange;
     margin: 5px 0px;
 }
 .time-top{
-    @extend .time;
+    @extend .time-div;
     float: right;
     margin-right: 5px;
     display: inline-block;
+}
+.time{
+    display: block;
 }
 .time-calc{
     @extend .time-top;
@@ -143,6 +149,7 @@ $margin:10px;
 }
 .description{
     margin: 5px 0px;
+    font-size: 0.9rem;
 }
 .projects{
     max-width: $card-max-width - 2*$projects-margin;
@@ -165,10 +172,13 @@ $margin:10px;
     display: inline-block;
     margin-top: 5px;
     vertical-align: top;
+    color:gray;
+    font-size: 0.8rem;
 }
 .down{
     display:inline-block;
     width: $down-arrow-size;
+    height: $down-arrow-size;
     z-index: 0;
 }
 .up-div{

@@ -24,6 +24,7 @@
             "img": "HERE_logo.png",
             "position": "Senior software engineer",
             "institute": "Here Technologies",
+            "description": "Computer vision",
             "time": "Mar 2019 - Jul 2019",
             "timeCalc": "4 mos",
             "place": "Mumbai, India",
@@ -33,8 +34,19 @@
             "img": "HERE_logo.png",
             "position": "Software engineer 2",
             "institute": "Here Technologies",
+            "description": "Machine learning, Full stack development",
             "time": "Jul 2017 - Feb 2019",
             "timeCalc": "1 yr 8 mos",
+            "place": "Mumbai, India",
+            "projects": []
+        },
+        {
+            "img": "HERE_logo.png",
+            "position": "Intern",
+            "institute": "Here Technologies",
+            "description": "Full stack development",
+            "time": "Aug 2016 - Dec 2016",
+            "timeCalc": "5 mos",
             "place": "Mumbai, India",
             "projects": []
         }
