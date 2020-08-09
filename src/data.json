@@ -6,7 +6,7 @@
             "institute": "University of Florida",
             "description": "Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
             "time": "Oct 2019 - Present",
-            "timeCalc": "10 mos",
+            "timeCalc": "11 mos",
             "place": "Gainesville, Fl",
             "projects": ["vae"]
         },
@@ -60,5 +60,12 @@
             },
             "desc":""
         }
-    }
+    },
+    "skills": [
+        {
+            "name":"Python",
+            "percentage": 80,
+            "size":200
+        }
+    ]
 }

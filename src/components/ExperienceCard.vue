@@ -82,6 +82,7 @@ $project-card-aspect-ratio: 1.6;
     height: 2.5*$card-height;
     transition: 0.3s;
     max-width: $card-max-width;
+    background-color: white;
 }
 .card-collapsed{
     @extend .card;

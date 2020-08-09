@@ -2,6 +2,8 @@ import os
 import datetime
 import shutil
 
+domain = "parthshah.ml"
+
 def done():
     print("done")
 
@@ -22,6 +24,11 @@ done()
 
 msg("preparing docs")
 os.rename('dist/', 'docs/')
+done()
+
+msg("setting domain name to "+domain)
+with open("docs/CNAME", "w+") as c:
+    c.write(domain)
 done()
 
 msg("deploying to github pages")

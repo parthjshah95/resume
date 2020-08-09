@@ -22,9 +22,18 @@
       <!-- Skills panel -->
       <div :class="bigScreen? 'panel-half-smaller': 'panel-full'">
         <h2 data-aos="zoom-in">Skills</h2>
-        lorem ipsum dolor sit amet
         <div>
-
+          <radial-progress-bar
+                      v-for="skill in skills"
+                      v-bind:key="skill.name"
+                      :diameter="150"
+                      :completed-steps="skill.percentage"
+                      :total-steps="100"
+                      :startColor="'#C5CAE9'"
+                      :stopColor="'#3F51B5'"
+                      data-aos="zoom-in">
+              <p>{{skill.name}}</p>
+          </radial-progress-bar>
         </div>
       </div>
     </div>
@@ -36,12 +45,14 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import resume_data from '@/data.json'
+import RadialProgressBar from 'vue-radial-progress'
 
 export default {
   name: 'Home',
   components: {
     // HelloWorld,
-    ExperienceCard
+    ExperienceCard,
+    RadialProgressBar
   },
   data(){
     resume_data.experience.forEach(e => {
@@ -130,12 +141,14 @@ $scale-photo: 15px;
   z-index: -1;
 }
 .panel-half-bigger{
-  display: inline;
+  display: inline-block;
   width: calc(#{$ratio} - #{2*$bg-padding});
 }
 .panel-half-smaller{
-  display: inline;
-  width: calc(100vw - #{$ratio} - #{4*$bg-padding});
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100vw - #{$ratio} - #{3*$bg-padding});
+  padding-left: 2*$bg-padding;
 }
 h1 {
   font-size: 4rem;
@@ -157,7 +170,7 @@ h2{
   font-family: Helvetica, sans-serif;
 }
 .bg-wh{
-  background-color: white;
+  background-color: #E8EAF6;
   margin: 0px;
   padding: $bg-padding;
   z-index: 1;
