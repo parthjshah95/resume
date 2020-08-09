@@ -56,13 +56,13 @@ export default {
   },
   data(){
     resume_data.experience.forEach(e => {
-      e['collapsed'] = 'true';
+      e['collapsed'] = false;
     });
     resume_data.education.forEach(e => {
-      e['collapsed'] = 'true';
+      e['collapsed'] = false;
     });
     resume_data['panel-half-bigger'] = "panel-half-bigger";
-    resume_data['panel-full'] = "";
+    resume_data['panel-full'] = "panel-full";
     return resume_data;
   },
   computed:{
@@ -149,6 +149,9 @@ $scale-photo: 15px;
 .panel-half-smaller{
   width: calc(100vw - #{$ratio} - #{3*$bg-padding});
 }
+.panel-full{
+  width: calc(100vw - #{2*$bg-padding});
+}
 .intro{
   color:white;
 }
@@ -173,7 +176,8 @@ h2{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #E8EAF6;
+  // background-color: #E8EAF6;
+  background-color: rgba($color: #E8EAF6, $alpha: 0.75);
   margin: 0px;
   padding: $bg-padding;
   z-index: 1;

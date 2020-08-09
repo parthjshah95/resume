@@ -2,63 +2,69 @@
     "experience":[
         {
             "img": "UF_logo.jpg",
-            "position": "Research assistant",
             "institute": "University of Florida",
-            "description": "Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
-            "time": "Oct 2019 - Present",
-            "timeCalc": "11 mos",
+            "link": "http://www.ufl.edu/",
+            "positions":[
+                {
+                    "name": "Research assistant",
+                    "description": "Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
+                    "time": "Oct 2019 - Present",
+                    "timeCalc": "11 mos"
+                },
+                {
+                    "name": "Graduate assistant",
+                    "description": "Advisor: <a href=\"https://www.bme.ufl.edu/labs/rashidi/\"> Dr. Rashidi</a>",
+                    "time": "Jan 2020 - May 2020",
+                    "timeCalc": "4 mos"            
+                }
+            ],
             "place": "Gainesville, Fl",
             "projects": ["vae"]
         },
         {
-            "img": "UF_logo.jpg",
-            "position": "Graduate assistant",
-            "institute": "University of Florida",
-            "description": "Advisor: <a href=\"https://www.bme.ufl.edu/labs/rashidi/\"> Dr. Rashidi</a>",
-            "time": "Jan 2020 - May 2020",
-            "timeCalc": "4 mos",
-            "place": "Gainesville, Fl",
-            "projects": []
-        },
-        {
             "img": "HERE_logo.png",
-            "position": "Senior software engineer",
             "institute": "Here Technologies",
-            "description": "Computer vision",
-            "time": "Mar 2019 - Jul 2019",
-            "timeCalc": "4 mos",
             "place": "Mumbai, India",
-            "projects": []
-        },
-        {
-            "img": "HERE_logo.png",
-            "position": "Software engineer 2",
-            "institute": "Here Technologies",
-            "description": "Machine learning, Full stack development",
-            "time": "Jul 2017 - Feb 2019",
-            "timeCalc": "1 yr 8 mos",
-            "place": "Mumbai, India",
-            "projects": []
-        },
-        {
-            "img": "HERE_logo.png",
-            "position": "Intern",
-            "institute": "Here Technologies",
-            "description": "Full stack development",
-            "time": "Aug 2016 - Dec 2016",
-            "timeCalc": "5 mos",
-            "place": "Mumbai, India",
+            "link": "https://www.here.com/",
+            "positions":[
+                {
+                    "name":"Senior software engineer",
+                    "description": "Computer vision",
+                    "time": "Mar 2019 - Jul 2019",
+                    "timeCalc": "5 mos"
+                },
+                {
+                    "name": "Software engineer 2",
+                    "description": "Machine learning, devops",
+                    "time": "Nov 2018 - Feb 2019",
+                    "timeCalc": "5 mos"
+                },
+                {
+                    "name": "Engineer",
+                    "description": "Full stack development",
+                    "time": "Jul 2017 - Oct 2018",
+                    "timeCalc": "1 yr 5 mos"
+                },
+                {
+                    "name": "Intern",
+                    "description": "Full stack development",
+                    "time": "Jul 2016 - Dec 2016",
+                    "timeCalc":"6 mos"
+                }
+            ],
             "projects": []
         }
     ],
     "projects": {
         "vae": {
             "title":"",
+            "link": "",
             "img":{
                 "small": "",
                 "large": ""
             },
-            "desc":""
+            "desc":"",
+            "inProgress": true
         }
     },
     "skills": [
@@ -103,14 +109,19 @@
             "label": "3 years"
         },
         {
-            "name": "jenkins, CI/CD",
+            "name": "jenkins, CI / CD",
             "percentage": 70,
-            "label":"1 year"
+            "label":"2 year"
         },
         {
             "name": "docker",
             "percentage": 70,
             "label":"2 years"
+        },
+        {
+            "name": "UI design",
+            "percentage": 70,
+            "label": "2 years"
         },
         {
             "name": "sense of humor",
@@ -121,21 +132,27 @@
     "education": [
         {
             "img": "UF_logo.jpg",
-            "position": "Master of Science",
             "institute": "University of Florida",
-            "description": "Computer science",
-            "time": "Aug 2019 - Present",
-            "timeCalc": "11 mos",
+            "link": "http://www.ufl.edu/",
+            "positions": [{
+                "name":"Master of Science",
+                "description": "Computer science",
+                "time": "Aug 2019 - Present",
+                "timeCalc": "11 mos"
+            }],
             "place": "Gainesville, Fl",
             "projects": []
         },
         {
             "img": "BITS_Logo.png",
-            "position": "Bachelor of Engineering (Honours)",
-            "institute": "Birla Institute of Technology and Science (BITS), Pilani",
-            "description": "electrical and electronics engineering",
-            "time": "Aug 2013 - July 2017",
-            "timeCalc": "4 years",
+            "institute": "BITS, Pilani, Hyderabad campus",
+            "link": "https://www.bits-pilani.ac.in/hyderabad/",
+            "positions": [{
+                "name":"Bachelor of Engineering (Honours)",
+                "description": "Electrical and electronics engineering",
+                "time": "Aug 2013 - July 2017",
+                "timeCalc": "4 years"
+            }],
             "place": "Hyderabad, India",
             "projects": []
         }

@@ -8,9 +8,10 @@
                       v-view.once="onceHandler"
                       stopColor="#512DA8"
                       startColor="#512DA8"
-                      innerStrokeColor="#ccc"
+                      innerStrokeColor="#ddd"
                       class="circle"
-                      data-aos="fade-up">
+                      data-aos="fade-up"
+                      data-aos-anchor-placement="center-bottom">
               <p>{{skill.label}}</p>
           </radial-progress-bar>
     </div>
@@ -30,7 +31,7 @@ export default {
     data() {
         return {
             percentage: 0,
-            size: 140,
+            size: 120,
             
         }
     },
@@ -65,8 +66,10 @@ p{
 .circle{
     border-radius: $size/2;
     border: none;
+    margin: auto;
     &:hover{
         box-shadow: $box-shadow;
+        background-color: rgba($color: #E8EAF6, $alpha: 0.2);
     }
 }
 </style>

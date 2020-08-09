@@ -5,25 +5,35 @@
             <img class="icon" :src="require(`../assets/${properties.img}`)">
             <!-- <img class="icon" src="../assets/UF_logo.jpg"> -->
             <div class="info">
-                <div v-bind:class="bigScreen? 'time-top': 'time-div'">
-                    <i class="time">{{properties.time}}</i>
-                    <div class="time-calc" v-if="bigScreen"><i>{{properties.timeCalc}}</i></div>            
-                </div>
-                <div class="position">{{properties.position}}</div>
-                <div class="institute"><b>{{properties.institute}}</b></div>
-                <div class="description" v-if="bigScreen" v-html="properties.description"></div>
+                <div class="institute"><a :href="properties.link"><b>{{properties.institute}}</b></a></div>
                 <div class="description" v-if="bigScreen">{{properties.place}}</div>
+                
+                <!-- <div class="position" v-if="properties.position">
+                    <div v-bind:class="bigScreen? 'time-top': 'time-div'">
+                        <i class="time">{{properties.time}}</i>
+                        <div class="time-calc" v-if="bigScreen"><i>{{properties.timeCalc}}</i></div>            
+                    </div>
+                    <div class="description" v-if="bigScreen" v-html="properties.description"></div>
+                </div> -->
+
+                <div class="position-div" v-for="position in properties.positions" :key="position.name">
+                    <div v-bind:class="bigScreen? 'time-top': 'time-div'">
+                    <!-- <div v-bind:class="'time-div'"> -->
+                        <i class="time">{{position.time}}</i>
+                        <div class="time-calc" v-if="bigScreen"><i>{{position.timeCalc}}</i></div>            
+                    </div>
+                    <div class="position">{{position.name}}</div>
+                    <div class="description" v-if="bigScreen" v-html="position.description"></div>
+                </div>
             </div>
         </div>
         <div class="down-div" v-on:click="toggleProjects()" v-if="properties.collapsed"> 
-            <span class="down-desc">projects</span>
+            <!-- <span class="down-desc">projects</span> -->
             <img class="down" src="../assets/keyboard-down-arrow.png">
         </div>
         <div class="projects" v-if="!properties.collapsed">
             <!-- <img class='left-arrow' src="../assets/left-arrow.svg"></img> -->
-            <div class="project-card"  data-aos="fade-down"> 
-                <div>Lorem ipsum dolor sit amet</div>
-            </div>
+            <ProjectCardNano v-for="project in projects" :key="project.name"></ProjectCardNano>
             <!-- <img class='right-arrow' src="../assets/right-arrow.svg"></img> -->
             <div class="up-div" v-on:click="toggleProjects()">
                 <img class="up" src="../assets/keyboard-up-arrow.svg">
@@ -34,7 +44,12 @@
 </template>
 
 <script>
+import ProjectCardNano from "@/components/ProjectCardNano.vue"
+
 export default {
+    components:{
+        ProjectCardNano
+    },
     data(){
         return{
             properties: this.cardData,
@@ -69,7 +84,7 @@ $border-radius: 10px;
 $box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
 $down-arrow-size: 30px;
-$up-arrow-size: 15px;
+$up-arrow-size: 10px;
 $projects-margin: 25px;
 $side-arrow-paddings: 5px;
 $project-card-aspect-ratio: 1.6;
@@ -79,14 +94,14 @@ $project-card-aspect-ratio: 1.6;
     margin-bottom: 30px;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-    height: 2.5*$card-height;
+    // height: 2.5*$card-height;
     transition: 0.3s;
     max-width: $card-max-width;
     background-color: white;
 }
 .card-collapsed{
     @extend .card;
-    height: 1.3*$card-height;
+    // height: 1.3*$card-height;
     transition: 0.3s;
 }
 .icon{
@@ -95,27 +110,33 @@ $project-card-aspect-ratio: 1.6;
     // left: 0px;
     width: $card-height;
     height: $card-height;
-    border-right:0.5px solid #ccc;
+    border-radius: $border-radius 0px 0px $border-radius;
+    border-bottom: 0.5px solid lightgray;
 }
 .primary{
     max-width: $card-max-width;
-    // position:absolute;
-    overflow: hidden;
     border-radius: $border-radius;
-    height: $card-height;
     width: 100%;
     box-shadow: $box-shadow;
     z-index:1;
 }
 $margin:10px;
 .info{
-    // position: absolute;
-    height: $card-height - 20px;
+    min-height: $card-height - 20px;
+    border-left: 0.5px solid #ccc;
     width: calc(100% - #{$card-height+2*$margin});
-    margin: $margin;
+    padding: $margin;
     margin-left: $card-height;
     padding-left: 10px;
     text-align: left;
+}
+.position-div{
+    margin: 10px 0px 10px 10px;
+    border-left: 1px solid lightgray;
+    padding: 5px;
+    background-color: #f6f6f6;
+
+
 }
 .position{
     font-size: 1.2rem;
@@ -123,19 +144,21 @@ $margin:10px;
     text-transform: capitalize;
 }
 .institute{
-    font-size: 0.75rem;
+    // font-size: 0.75rem;
     color: $orange;
-    margin: 7px 0px;
+    // margin: 7px 0px;
     text-transform: uppercase;
 }
 .time-div{
-    font-size: 1.0rem;
+    font-size: 0.85rem;
     // color: $orange;
-    margin: 5px 0px;
+    // margin: 5px 0px;
 }
 .time-top{
     @extend .time-div;
+    vertical-align: top;
     float: right;
+    clear:right;
     margin-right: 5px;
     display: inline-block;
 }
@@ -146,10 +169,10 @@ $margin:10px;
     @extend .time-top;
     font-size: 0.8rem;
     color: gray;
-    margin-top: 8px;
+    // margin-top: 8px;
 }
 .description{
-    margin: 5px 0px;
+    margin: 0px;
     font-size: 0.9rem;
 }
 .projects{
@@ -167,7 +190,7 @@ $margin:10px;
     width:100%;
     height: $down-arrow-size;
     margin-top: 5px;
-    overflow: hidden;   
+    // overflow: hidden;   
 }
 .down-desc{
     display: inline-block;
@@ -193,27 +216,6 @@ $margin:10px;
     display:inline-block;
     width: $up-arrow-size;
     z-index: 0;
-}
-$project-card-margin: 12px;
-.project-card{
-    @extend .card;
-    height: $card-height;
-    width: $project-card-aspect-ratio * $card-height;
-    margin: $project-card-margin;
-    padding: 5px;
-    z-index:3;
-    cursor: pointer;
-    transition: 0.3s;
-    &:hover{
-        margin: ($project-card-margin - (0.025 * $card-height))  ($project-card-margin - (0.025 * $project-card-aspect-ratio * $card-height));
-        padding: 5px + (0.025 * $card-height)  (5px + (0.025 * $project-card-aspect-ratio * $card-height));    
-        box-shadow: $box-shadow-highlight;
-    }
-    &:active{
-        margin: $project-card-margin;
-        padding: 5px;
-        box-shadow: $box-shadow;
-    }
 }
 .arrow{
     position: absolute;
