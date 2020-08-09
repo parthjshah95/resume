@@ -194,22 +194,23 @@ $margin:10px;
     width: $up-arrow-size;
     z-index: 0;
 }
+$project-card-margin: 12px;
 .project-card{
     @extend .card;
     height: $card-height;
     width: $project-card-aspect-ratio * $card-height;
-    margin: 12px;
+    margin: $project-card-margin;
     padding: 5px;
     z-index:3;
     cursor: pointer;
     transition: 0.3s;
     &:hover{
-        margin: 15px - (0.025 * $card-height);
-        padding: 5px + (0.025 * $card-height);
+        margin: ($project-card-margin - (0.025 * $card-height))  ($project-card-margin - (0.025 * $project-card-aspect-ratio * $card-height));
+        padding: 5px + (0.025 * $card-height)  (5px + (0.025 * $project-card-aspect-ratio * $card-height));    
         box-shadow: $box-shadow-highlight;
     }
     &:active{
-        margin: 15px;
+        margin: $project-card-margin;
         padding: 5px;
         box-shadow: $box-shadow;
     }

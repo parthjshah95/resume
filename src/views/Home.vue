@@ -4,9 +4,12 @@
       <img alt="University of Florida" src="../assets/ben_hill_stadium.jpg" class="image-bleed">
       <div class="image-overlay"></div>
       <img class="photo" src="../assets/me.jpg" data-aos="zoom-in">
-      <div data-aos="fade-down">
+      <div class="intro" data-aos="fade-down">
         <h1>PARTH SHAH</h1>
         <h4>Machine learning | Full stack</h4>
+        <div>Hi there! Nice to meet you :)</div>
+        <div>I am a computer science graduate student at the University of Florida.</div>
+        <div>Scroll down to know me better!</div>
       </div>
       <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
       <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
@@ -23,17 +26,14 @@
       <div :class="bigScreen? 'panel-half-smaller': 'panel-full'">
         <h2 data-aos="zoom-in">Skills</h2>
         <div>
-          <radial-progress-bar
-                      v-for="skill in skills"
-                      v-bind:key="skill.name"
-                      :diameter="150"
-                      :completed-steps="skill.percentage"
-                      :total-steps="100"
-                      :startColor="'#C5CAE9'"
-                      :stopColor="'#3F51B5'"
-                      data-aos="zoom-in">
-              <p>{{skill.name}}</p>
-          </radial-progress-bar>
+          <SkillRadial v-for="skill in skills" v-bind:key="skill.name" v-bind:skill="skill"></SkillRadial>
+        </div>
+      </div>
+      <!-- Education -->
+      <div :class="bigScreen? 'panel-half-bigger': 'panel-full'">
+        <h2 data-aos="zoom-in">Education</h2>
+        <div data-aos="zoom-in">
+          <ExperienceCard v-for="ed in education" v-bind:key="ed.position" v-bind:cardData="ed"></ExperienceCard>
         </div>
       </div>
     </div>
@@ -44,18 +44,21 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
+import SkillRadial from '@/components/SkillRadial.vue'
 import resume_data from '@/data.json'
-import RadialProgressBar from 'vue-radial-progress'
 
 export default {
   name: 'Home',
   components: {
     // HelloWorld,
     ExperienceCard,
-    RadialProgressBar
+    SkillRadial
   },
   data(){
     resume_data.experience.forEach(e => {
+      e['collapsed'] = 'true';
+    });
+    resume_data.education.forEach(e => {
       e['collapsed'] = 'true';
     });
     resume_data['panel-half-bigger'] = "panel-half-bigger";
@@ -141,23 +144,20 @@ $scale-photo: 15px;
   z-index: -1;
 }
 .panel-half-bigger{
-  display: inline-block;
   width: calc(#{$ratio} - #{2*$bg-padding});
 }
 .panel-half-smaller{
-  display: inline-block;
-  vertical-align: top;
   width: calc(100vw - #{$ratio} - #{3*$bg-padding});
-  padding-left: 2*$bg-padding;
+}
+.intro{
+  color:white;
 }
 h1 {
   font-size: 4rem;
-  color: white;
   margin-bottom: 0px;
   font-family:  "Amaranth", Helvetica;
 }
 h4{
-  color:white;
   margin-top:0px;
   font-size: 1.8rem;
   font-weight: 100;
@@ -170,6 +170,9 @@ h2{
   font-family: Helvetica, sans-serif;
 }
 .bg-wh{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #E8EAF6;
   margin: 0px;
   padding: $bg-padding;

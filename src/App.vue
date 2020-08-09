@@ -45,7 +45,6 @@ $junction-dir: "assets/fonts/Amaranth/";
 
 #app {
   font-family: "Aftasans", sans-serif;
-  font-style: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
