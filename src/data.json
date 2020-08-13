@@ -1,4 +1,11 @@
 {
+    "name": "PARTH SHAH",
+    "field": "Machine learning | Full stack",
+    "intro": [
+        "Hi there! Nice to meet you :)",
+        "I am a computer science graduate student at the University of Florida.",
+        "Scroll down to know me better!"
+    ],
     "experience":[
         {
             "img": "UF_logo.jpg",
@@ -7,19 +14,19 @@
             "positions":[
                 {
                     "name": "Research assistant",
-                    "description": "Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
+                    "description": "Principal investigators: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
                     "time": "Oct 2019 - Present",
                     "timeCalc": "11 mos"
                 },
                 {
                     "name": "Graduate assistant",
-                    "description": "Advisor: <a href=\"https://www.bme.ufl.edu/labs/rashidi/\"> Dr. Rashidi</a>",
+                    "description": "Principal investigator: <a href=\"https://www.bme.ufl.edu/labs/rashidi/\"> Dr. Rashidi</a>",
                     "time": "Jan 2020 - May 2020",
                     "timeCalc": "4 mos"            
                 }
             ],
             "place": "Gainesville, Fl",
-            "projects": ["vae"]
+            "projects": ["vae", "atspm", "iheal"]
         },
         {
             "img": "HERE_logo.png",
@@ -52,19 +59,115 @@
                     "timeCalc":"6 mos"
                 }
             ],
-            "projects": []
+            "projects": [
+                "ruleStudio",
+                "liveSense",
+                "duppoi"
+            ]
         }
     ],
     "projects": {
         "vae": {
-            "title":"",
-            "link": "",
+            "title": "VAE - Scientific data compression",
+            "subtitle": "Modern Artificial Intelligence and Learning Technologies (MALT) lab",
+            "time": "Mar 2020 - Present",
             "img":{
-                "small": "",
-                "large": ""
+                "nano": "vae_nano.png",
+                "large": "vae_large.jpg"
             },
-            "desc":"",
-            "inProgress": true
+            "desc":"<small><b><i>(In Progress)</i></b></small> <br>We propose a novel architecture for autoencoders and variational autoencoders for the associated problem statements in image compression and image generation. This method is also easily extensible to higher dimensional data like in scientific data domains, which is the primary focus of this project. <br> Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
+            "keywords": [
+                "autoencoders",
+                "data compression",
+                "matrix decomposition"
+            ]
+        },
+        "atspm": {
+            "title": "Temporal data - Traffic estimation",
+            "subtitle": "Modern Artificial Intelligence and Learning Technologies (MALT) lab",
+            "time": "Oct 2019 - Mar 2020",
+            "link": "",
+            "img": {
+                "nano": "sumo-screenshot.png",
+                "large": "sumo-screenshot.png"
+            },
+            "desc": "Estimation of travel times and queue lengths at signalized road intersections by analysing data from Automated Traffic Signal Performance Measures (ATSPM). In simple terms, induction loop sensors record vehicles passing over them. This data can be used to estimate traffic conditions.<br><br><small><i>Accepted for presentation at the <a href=\"https://www.ieee-itsc2020.org\">23rd Intelligent Transportation Systems Conference (IEEE ITSC 2020)</a></i></small><br><br><small>* This work is supported by NSF CNS 1922782, by the Florida Dept. of Transportation (FDOT) and FDOT District 5.</small>",
+            "keywords": [
+                "atspm",
+                "travel time estimation",
+                "platoonmatching"
+            ]
+        },
+        "iheal": {
+            "title": "Intelligent ICU",
+            "subtitle": "Intelligent Health Systems Lab (i-Heal)",
+            "link": "https://www.bme.ufl.edu/labs/rashidi/",
+            "time": "Jan 2020 - May 2020",
+            "img": {
+                "nano": "intelligent_icu.jpg",
+                "large": "intelligent_icu.jpg"
+            },
+            "desc": "Transforming patient care in the Intensive Care Unit by developing autonomous monitoring tools using advanced machine learning techniques. Currently, many critical care indices are not captured automatically at a granular level, rather are repetitively assessed by overburdened nurses. In this pilot study, the lab examined the feasibility of using pervasive sensing technology and artiﬁcial intelligence for autonomous and granular monitoring in the Intensive Care Unit (ICU).",
+            "keywords": [
+                "Intensive Care Unit",
+                "automated patient monitoring",
+                "pervasive AI healthcare"
+            ]
+        },
+        "ruleStudio":{
+            "title": "Visual programming - Rule studio",
+            "time": "Aug 2017 - Dec 2019",
+            "img": {
+                "nano": "blockly.png",
+                "large": "blockly.png"
+            },
+            "desc":"Built a proprietary drag and drop tool to aid creation of domain specific rules. Lead the end-to-end process from ideation and architecture design to production and CI/CD. My proposal of utilizing visual programming lead to an improvement of 80% in the average turn around time of a rule. Visual programming library: <a href=\"https://developers.google.com/blockly\">Google blockly</a>",
+            "keywords":[
+                "angularjs 1.7",
+                "scala",
+                "NoSQL (mongodb)",
+                "visual programming"
+            ]
+        },
+        "liveSense": {
+            "title": "HERE Live Sense SDK",
+            "link": "https://www.here.com/platform/location-based-services/live-sense-sdk",
+            "time": "Dec 2017 - Jul 2019",
+            "img": {
+                "nano": "live_sense.jpg",
+                "large": "live_sense.jpg"
+            },
+            "desc": "Rapid prototyping and R&D for a technical feasibility study for a new product. Successful completion of the same lead to the eventual release of the <a href=\"https://www.here.com/platform/location-based-services/live-sense-sdk\">HERE LiveSense SDK.</a> Real-time object detection on edge devices with hardware constraints was very challenging as well as fun to solve.",
+            "keywords": [
+                "computer vision",
+                "real time object detection"
+            ]
+        },
+        "duppoi":{
+            "title": "Duplicate Points of Interests",
+            "time": "Jul 2018 - Dec 2018",
+            "img": {
+                "nano":"duppoi.jpg",
+                "large":"duppoi_1.jpg"
+            },
+            "desc": "Crowdsourced or data aggregated from different sources causes a lot fo duplicate places in geospatial data. This project aimed to reduce/eliminate human work hours required to identify and remove such duplicates.",
+            "keywords": [
+                "word embeddings",
+                "statistical machine learning"
+            ]
+        },
+        "fml": {
+            "title": "Course project - alphabet recognition",
+            "time": "Nov 2019",
+            "img": {
+                "nano": "fml.png",
+                "large": "fml.png"
+            },
+            "desc": "Final project for the course (EEL5840) Fundamentals of Machine Learning. Achieved the highest test accuracy on the classification task amongst all submissions.",
+            "keywords":[
+                "image classification",
+                "mnist"
+            ]
         }
     },
     "skills": [
@@ -141,7 +244,9 @@
                 "timeCalc": "11 mos"
             }],
             "place": "Gainesville, Fl",
-            "projects": []
+            "projects": [
+                "fml"
+            ]
         },
         {
             "img": "BITS_Logo.png",

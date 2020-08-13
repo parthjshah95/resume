@@ -55,7 +55,8 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
     display: inline-block;
     vertical-align: top;
     width: $size;
-    margin: 15px;
+    margin: 25px;
+    z-index: 2;
 }
 .name{
     font-size: 1.1rem;

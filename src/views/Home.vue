@@ -1,39 +1,38 @@
 <template>
   <div class="home">
+    <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>
     <div class="cont-bleed">
       <img alt="University of Florida" src="../assets/ben_hill_stadium.jpg" class="image-bleed">
       <div class="image-overlay"></div>
       <img class="photo" src="../assets/me.jpg" data-aos="zoom-in">
       <div class="intro" data-aos="fade-down">
-        <h1>PARTH SHAH</h1>
-        <h4>Machine learning | Full stack</h4>
-        <div>Hi there! Nice to meet you :)</div>
-        <div>I am a computer science graduate student at the University of Florida.</div>
-        <div>Scroll down to know me better!</div>
+        <h1>{{rd.name}}</h1>
+        <h4>{{rd.field}}</h4>
+        <div v-for="line in rd.intro" :key="line">{{line}}</div>
       </div>
       <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
       <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
     </div>
-    <div class="bg-wh">
+    <div :class="bg_wh">
       <!-- Experience panel -->
       <div :class="bigScreen? 'panel-half-bigger': 'panel-full'">
         <h2 data-aos="zoom-in">Experience</h2>
         <div data-aos="zoom-in">
-          <ExperienceCard v-for="exp in experience" v-bind:key="exp.position" v-bind:cardData="exp"></ExperienceCard>
+          <ExperienceCard v-for="exp in rd.experience" v-bind:key="exp.position" v-bind:cardData="exp" v-on:openProject="showProject"></ExperienceCard>
         </div>
       </div>
       <!-- Skills panel -->
       <div :class="bigScreen? 'panel-half-smaller': 'panel-full'">
         <h2 data-aos="zoom-in">Skills</h2>
         <div>
-          <SkillRadial v-for="skill in skills" v-bind:key="skill.name" v-bind:skill="skill"></SkillRadial>
+          <SkillRadial v-for="skill in rd.skills" v-bind:key="skill.name" v-bind:skill="skill"></SkillRadial>
         </div>
       </div>
       <!-- Education -->
       <div :class="bigScreen? 'panel-half-bigger': 'panel-full'">
         <h2 data-aos="zoom-in">Education</h2>
         <div data-aos="zoom-in">
-          <ExperienceCard v-for="ed in education" v-bind:key="ed.position" v-bind:cardData="ed"></ExperienceCard>
+          <ExperienceCard v-for="ed in rd.education" v-bind:key="ed.position" v-bind:cardData="ed" v-on:openProject="showProject"></ExperienceCard>
         </div>
       </div>
     </div>
@@ -46,24 +45,47 @@
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import SkillRadial from '@/components/SkillRadial.vue'
 import resume_data from '@/data.json'
+import ProjectCardFull from '@/components/ProjectCardFull.vue'
 
 export default {
   name: 'Home',
   components: {
     // HelloWorld,
     ExperienceCard,
-    SkillRadial
+    SkillRadial,
+    ProjectCardFull
   },
-  data(){
+  created(){
     resume_data.experience.forEach(e => {
-      e['collapsed'] = false;
+      e['projectsData'] = {};
+      e['projects'].forEach(project => {
+        e['projectsData'][project] = resume_data.projects[project];
+      });
     });
     resume_data.education.forEach(e => {
-      e['collapsed'] = false;
+      e['projectsData'] = {};
+      e['projects'].forEach(project => {
+        e['projectsData'][project] = resume_data.projects[project];
+      });
     });
-    resume_data['panel-half-bigger'] = "panel-half-bigger";
-    resume_data['panel-full'] = "panel-full";
-    return resume_data;
+  },
+  methods: {
+    showProject(projectKey){
+      this.projectShown = this.rd.projects[projectKey];
+      // console.log(this.projectShown);
+    },
+    closeProject(){
+      // console.log("trying to close");
+      this.projectShown = null;
+    }
+  },
+  data(){
+    return {
+      'rd': resume_data,
+      'panel-half-bigger': "panel-half-bigger",
+      'panel-full': "panel-full",
+      'projectShown': null
+    };
   },
   computed:{
     windowWidth() {
@@ -71,6 +93,9 @@ export default {
     },
     bigScreen(){
       return this.windowWidth > 800;
+    },
+    bg_wh(){
+      return this.bigScreen? 'bg-wh': 'bg-wh-small';
     }
   }
 }
@@ -79,7 +104,8 @@ export default {
 <style lang="scss">
 
 $ratio: 55vw;
-$bg-padding: 20px;
+$bg-padding: 50px;
+$bg-padding-small: 10px;
 $arrow-size: 70px;
 $box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
@@ -113,7 +139,7 @@ html {
 .image-overlay {
   @extend .image-bleed;
   z-index: -1;
-  background-color: rgba(64, 55, 105, 0.9)
+  background-color: rgba(64, 55, 105, 0.9);
 }
 
 $photo-size: 200px;
@@ -144,13 +170,13 @@ $scale-photo: 15px;
   z-index: -1;
 }
 .panel-half-bigger{
-  width: calc(#{$ratio} - #{2*$bg-padding});
+  width: calc(#{$ratio} - #{$bg-padding});
 }
 .panel-half-smaller{
-  width: calc(100vw - #{$ratio} - #{3*$bg-padding});
+  width: calc(100vw - #{$ratio} - #{2*$bg-padding});
 }
 .panel-full{
-  width: calc(100vw - #{2*$bg-padding});
+  width: calc(100vw - #{2*$bg-padding-small});
 }
 .intro{
   color:white;
@@ -182,5 +208,9 @@ h2{
   padding: $bg-padding;
   z-index: 1;
   min-height: 500px;
+}
+.bg-wh-small{
+  @extend .bg-wh;
+  padding: $bg-padding-small;
 }
 </style>
