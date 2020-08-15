@@ -10,26 +10,32 @@
         <h4>{{rd.field}}</h4>
         <div v-for="line in rd.intro" :key="line">{{line}}</div>
       </div>
+      <!-- <img src="../assets/photo_big.png" class="photo-big"> -->
       <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
       <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
     </div>
     <div :class="bg_wh">
       <!-- Experience panel -->
-      <div :class="bigScreen? 'panel-half-bigger': 'panel-full'">
+      <!-- <div :class="bigScreen? 'panel-half-bigger': 'panel-full'"> -->
+      <div class="panel-full">
         <h2 data-aos="zoom-in">Experience</h2>
         <div data-aos="zoom-in">
           <ExperienceCard v-for="exp in rd.experience" v-bind:key="exp.position" v-bind:cardData="exp" v-on:openProject="showProject"></ExperienceCard>
         </div>
       </div>
+      <br>
       <!-- Skills panel -->
-      <div :class="bigScreen? 'panel-half-smaller': 'panel-full'">
+      <!-- <div :class="bigScreen? 'panel-half-smaller': 'panel-full'"> -->
+      <div class="panel-full">
         <h2 data-aos="zoom-in">Skills</h2>
         <div>
           <SkillRadial v-for="skill in rd.skills" v-bind:key="skill.name" v-bind:skill="skill"></SkillRadial>
         </div>
       </div>
+      <br>
+      <br>
       <!-- Education -->
-      <div :class="bigScreen? 'panel-half-bigger': 'panel-full'">
+      <div class="panel-full">
         <h2 data-aos="zoom-in">Education</h2>
         <div data-aos="zoom-in">
           <ExperienceCard v-for="ed in rd.education" v-bind:key="ed.position" v-bind:cardData="ed" v-on:openProject="showProject"></ExperienceCard>
@@ -161,6 +167,13 @@ $scale-photo: 15px;
     margin-bottom: 0px;
   }
 }
+.photo-big{
+  position: absolute;
+  max-height: 1000px;
+  height: 100%;
+  right: 10px;
+  bottom: -30%;
+}
 .down-big{
   position: fixed;
   bottom:0px;
@@ -178,13 +191,17 @@ $scale-photo: 15px;
 .panel-full{
   width: calc(100vw - #{2*$bg-padding-small});
 }
+.skills{
+  max-width: 980px;
+  margin: 50px;
+}
 .intro{
   color:white;
 }
 h1 {
   font-size: 4rem;
   margin-bottom: 0px;
-  font-family:  "Amaranth", Helvetica;
+  font-family:  "Amaranth", Helvetica, sans-serif;
 }
 h4{
   margin-top:0px;
@@ -196,7 +213,7 @@ h2{
   @extend h4;
   color: #444;
   margin: 20px;
-  font-family: Helvetica, sans-serif;
+  font-family: "Amaranth", Helvetica, sans-serif;
 }
 .bg-wh{
   display: flex;

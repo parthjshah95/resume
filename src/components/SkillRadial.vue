@@ -12,7 +12,7 @@
                       class="circle"
                       data-aos="fade-up"
                       data-aos-anchor-placement="center-bottom">
-              <p>{{skill.label}}</p>
+              <!-- <p>{{skill.label}}</p>    -->
           </radial-progress-bar>
     </div>
 </template>
@@ -31,7 +31,7 @@ export default {
     data() {
         return {
             percentage: 0,
-            size: 120,
+            size: 90,
             
         }
     },
@@ -63,6 +63,7 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
 }
 p{
     margin:0px;
+    font-size: 0.9rem;
 }
 .circle{
     border-radius: $size/2;

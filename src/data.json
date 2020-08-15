@@ -121,7 +121,7 @@
                 "nano": "blockly.png",
                 "large": "blockly.png"
             },
-            "desc":"Built a proprietary drag and drop tool to aid creation of domain specific rules. Lead the end-to-end process from ideation and architecture design to production and CI/CD. My proposal of utilizing visual programming lead to an improvement of 80% in the average turn around time of a rule. Visual programming library: <a href=\"https://developers.google.com/blockly\">Google blockly</a>",
+            "desc":"Built a proprietary drag and drop tool to aid creation of domain specific rules. Led the end-to-end process from ideation and architecture design to production and CI/CD. My proposal of utilizing visual programming led to an improvement of 80% in the average turn around time of a rule. Visual programming library: <a href=\"https://developers.google.com/blockly\">Google blockly</a>",
             "keywords":[
                 "angularjs 1.7",
                 "scala",
@@ -137,7 +137,7 @@
                 "nano": "live_sense.jpg",
                 "large": "live_sense.jpg"
             },
-            "desc": "Rapid prototyping and R&D for a technical feasibility study for a new product. Successful completion of the same lead to the eventual release of the <a href=\"https://www.here.com/platform/location-based-services/live-sense-sdk\">HERE LiveSense SDK.</a> Real-time object detection on edge devices with hardware constraints was very challenging as well as fun to solve.",
+            "desc": "Rapid prototyping and R&D for a technical feasibility study for a new product. Successful completion of the same lead to the eventual release of the <a href=\"https://www.here.com/platform/location-based-services/live-sense-sdk\">HERE LiveSense SDK</a>. To quote HERE, this is <q>an AI-powered SDK that transforms camera-enabled devices into hazard awareness sensors for drivers.</q> <br>Real-time object detection on edge devices with hardware constraints was very challenging as well as fun to solve. We worked on Android as well as iOS versions of the SDK.",
             "keywords": [
                 "computer vision",
                 "real time object detection"

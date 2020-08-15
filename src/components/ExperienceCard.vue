@@ -86,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 
-$card-max-width: 700px;
+$card-max-width: 900px;
 $card-height: 110px;
 $icon-ratio-small: 0.7;
 $blue: #283593;
@@ -101,7 +101,8 @@ $project-card-aspect-ratio: 1.6;
 
 .card{
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     // height: 2.5*$card-height;
