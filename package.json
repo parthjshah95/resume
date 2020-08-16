@@ -21,6 +21,7 @@
     "vue-in-viewport-directive": "^2.0.1",
     "vue-radial-progress": "^0.3.2",
     "vue-router": "^3.2.0",
+    "vue-scrollto": "^2.18.2",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

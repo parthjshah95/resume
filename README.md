@@ -1,4 +1,10 @@
-# resume
+# Resume
+
+A free to use interactive resume template without the need to edit any html code. Made using Vuejs. Simply eidt the file `data.json` with your own data and you are good to go! 
+
+I would highly appreciate it if you retained the tiny credits link on the bottom.
+Thanks!
+
 
 ## Project setup
 ```

@@ -155,7 +155,7 @@ html {
 }
 .navbtn{
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   display: inline;
   transition: 0.3s;
   &:hover{
@@ -237,8 +237,9 @@ $scale-photo: 15px;
   right: 10px;
   bottom: 10px;
   font-size: 0.7rem;
+  border-radius: 10px;
   color: #C5CAE9;
-  padding: 10px;
+  padding: 5px 10px;
   &:hover{
     background-color: rgba(#673AB7, 0.1);
     box-shadow: $box-shadow-highlight;
