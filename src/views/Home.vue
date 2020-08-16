@@ -1,30 +1,43 @@
 <template>
   <div class="home">
-    <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>
-    <div v-if="bigScreen" class="contact-div">
-      <contact v-for="contact in rd.contact" :key="contact.link" :contact="contact" data-aos="slide-right"></contact>  
-    </div>  
-      
+    <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>      
     <div class="cont-bleed">
-    
+      <div class="navbar">
+        <div class="navbtn" v-scroll-to="'#aboutme'">About me</div>
+        <div class="navbtn" v-scroll-to="'#experience'">Experience</div>
+        <div class="navbtn" v-scroll-to="'#skills'">Skills</div>
+        <div class="navbtn" v-scroll-to="'#education'">Education</div>
+      </div>
       <img alt="University of Florida" src="../assets/ben_hill_stadium.jpg" class="image-bleed">
       <div class="image-overlay"></div>
-      <img class="photo" src="../assets/me.jpg" data-aos="zoom-in">
+      <img class="photo" :src="require(`../assets/${rd.photo}`)" data-aos="zoom-in">
       <div class="intro" data-aos="fade-down">
         <h1>{{rd.name}}</h1>
         <h4>{{rd.field}}</h4>
         <div class="button">Download resume</div>
         <div v-for="line in rd.intro" :key="line">{{line}}</div>
       </div>
-
+      <div v-if="bigScreen" class="contact-div">
+        <contact v-for="contact in rd.contact" :key="contact.link" :contact="contact" data-aos="slide-right"></contact>  
+      </div>
       <!-- <img src="../assets/photo_big.png" class="photo-big"> -->
       <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
       <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
+      <a class="template-msg" href="https://github.com/parthjshah95/resume">
+        Use this template for your resume.
+        <br>
+        Made with ❤️ by Parth Shah.
+      </a>
     </div>
     <div :class="bg_wh">
+      <!-- About me -->
+      <div class="panel-full" id="aboutme">
+        <h2 data-aos="zoom-in">About me</h2>
+        <p class="about" v-html="rd.about"></p>
+      </div>
       <!-- Experience panel -->
       <!-- <div :class="bigScreen? 'panel-half-bigger': 'panel-full'"> -->
-      <div class="panel-full">
+      <div class="panel-full" id="experience">
         <h2 data-aos="zoom-in">Experience</h2>
         <div data-aos="zoom-in">
           <ExperienceCard v-for="exp in rd.experience" v-bind:key="exp.position" v-bind:cardData="exp" v-on:openProject="showProject"></ExperienceCard>
@@ -33,7 +46,7 @@
       <br>
       <!-- Skills panel -->
       <!-- <div :class="bigScreen? 'panel-half-smaller': 'panel-full'"> -->
-      <div class="panel-full">
+      <div class="panel-full" id="skills">
         <h2 data-aos="zoom-in">Skills</h2>
         <div>
           <SkillRadial v-for="skill in rd.skills" v-bind:key="skill.name" v-bind:skill="skill"></SkillRadial>
@@ -42,7 +55,7 @@
       <br>
       <br>
       <!-- Education -->
-      <div class="panel-full">
+      <div class="panel-full" id="education">
         <h2 data-aos="zoom-in">Education</h2>
         <div data-aos="zoom-in">
           <ExperienceCard v-for="ed in rd.education" v-bind:key="ed.position" v-bind:cardData="ed" v-on:openProject="showProject"></ExperienceCard>
@@ -128,6 +141,29 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
 html {
   overflow-x: hidden;
 }
+.navbar{
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;    
+}
+.navbtn{
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline;
+  transition: 0.3s;
+  &:hover{
+    background-color: rgba(#673AB7, 0.1);
+    box-shadow: $box-shadow-highlight;
+    color: #D1C4E9;
+  }
+}
 .contact-div{
   position: absolute;
   left:20px;
@@ -196,6 +232,19 @@ $scale-photo: 15px;
   height: $arrow-size;
   z-index: -1;
 }
+.template-msg{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 0.7rem;
+  color: #C5CAE9;
+  padding: 10px;
+  &:hover{
+    background-color: rgba(#673AB7, 0.1);
+    box-shadow: $box-shadow-highlight;
+    color: #D1C4E9;
+  }
+}
 .panel-half-bigger{
   width: calc(#{$ratio} - #{$bg-padding});
 }
@@ -204,6 +253,11 @@ $scale-photo: 15px;
 }
 .panel-full{
   width: calc(100vw - #{2*$bg-padding-small});
+}
+.about{
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
 }
 .skills{
   max-width: 980px;
@@ -276,4 +330,5 @@ $btn-color: #673AB7;
   @extend .bg-wh;
   padding: $bg-padding-small;
 }
+
 </style>

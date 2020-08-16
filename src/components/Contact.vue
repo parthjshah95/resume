@@ -53,6 +53,7 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
     &:hover ~ .icon{
         box-shadow: $box-shadow-highlight;
         padding: 1.2*$padding;
+        border-bottom-right-radius: 0px;
     }
     &:hover ~ .label{
         visibility: visible;
@@ -61,7 +62,9 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
 }
 .label{
     background-color: white;
-    border-radius: 4px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
     padding: 4px;
     width: auto;
     position: absolute;
@@ -69,12 +72,13 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
     padding-left: $padding;
     top: 1px;
     z-index: 9;
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;   
     -webkit-transition: opacity 600ms, visibility 600ms;
     transition: opacity 600ms, visibility 600ms;
+    font-weight: bold;
 }
 
 </style>

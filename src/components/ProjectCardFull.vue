@@ -10,11 +10,12 @@
                     <span class="link"><a :href="projectData.link">{{projectData.link}}</a></span>
                     <span class="time"><i>{{projectData.time}}</i></span>
                 </p>
-                <div class="desc" v-html="projectData.desc"></div>
-                <div class="keywords" v-if="projectData.keywords.length > 0">
-                    Keywords:
+                <div class="topics" v-if="projectData.keywords.length > 0">
+                    Topics:
                     <li v-for="item in projectData.keywords" :key="item">{{item}}</li>
                 </div>
+                <div class="desc" v-html="projectData.desc"></div>
+                
             </div>
         </div>
     </div>
@@ -128,9 +129,10 @@ $info-padding: 20px;
     overflow-y: auto;
     font-family: "Helvetica", sans-serif;
 }
-.keywords{
+.topics{
     text-align: left;
     margin-left: 20px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    // font-weight: bold;
 }
 </style>

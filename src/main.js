@@ -5,8 +5,10 @@ import store from './store'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import checkView from 'vue-check-view'
+import VueScrollTo from 'vue-scrollto'
 
 Vue.use(checkView)
+Vue.use(VueScrollTo)
 Vue.config.productionTip = false
 
 new Vue({

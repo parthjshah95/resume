@@ -1,10 +1,12 @@
 {
     "name": "PARTH SHAH",
     "field": "Machine learning | Full stack",
+    "photo": "me.jpg",
     "intro": [
         "Hi there! Nice to meet you :)",
         "Scroll down to know me better!"
     ],
+    "about": "I am a software engineer specializing in integrating AI solutions with products.<br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching. (Don't forget to check out my sketches at the end!)",
     "contact":[
         {
             "img": "github.svg",
@@ -114,9 +116,9 @@
             },
             "desc": "Estimation of travel times and queue lengths at signalized road intersections by analysing data from Automated Traffic Signal Performance Measures (ATSPM). In simple terms, induction loop sensors record vehicles passing over them. This data can be used to estimate traffic conditions.<br><br><small><i>Accepted for presentation at the <a href=\"https://www.ieee-itsc2020.org\">23rd Intelligent Transportation Systems Conference (IEEE ITSC 2020)</a></i></small><br><br><small>* This work is supported by NSF CNS 1922782, by the Florida Dept. of Transportation (FDOT) and FDOT District 5.</small>",
             "keywords": [
-                "atspm",
+                "smart city",
                 "travel time estimation",
-                "platoonmatching"
+                "platoon matching"
             ]
         },
         "iheal": {
@@ -189,6 +191,27 @@
                 "image classification",
                 "mnist"
             ]
+        },
+        "dss": {
+            "title": "Course project - decision support system",
+            "time": "2016",
+            "img": {
+                "nano": "java_swings.jpg",
+                "large": "java_swings.jpg"
+            },
+            "desc": "Final project for the course Human Computer Interfaces. The aim was to create decision support sytem for course administrators and course creators and also to facilitate student registrations.",
+            "keywords":[
+                "User experience design",
+                "Human computer interface"
+            ]
+        },
+        "brainforce":{
+            "title": "Brainforce",
+            "desc": "lorem ipsum dolor sit amet",
+            "keywords": [
+                "Brain computer interface",
+                "Electro encephalgraphy"
+            ]
         }
     },
     "skills": [
@@ -223,6 +246,16 @@
             "label": "1 year"
         },
         {
+            "name": "computer vision",
+            "percentage": 75,
+            "label": "2 years"
+        },
+        {
+            "name": "deep learning",
+            "percentage": 75,
+            "label": "2 years"
+        },
+        {
             "name": "Vue.js",
             "percentage": 60,
             "label": "2 years"
@@ -235,7 +268,7 @@
         {
             "name": "jenkins, CI / CD",
             "percentage": 70,
-            "label":"2 year"
+            "label":"2 years"
         },
         {
             "name": "docker",
@@ -260,7 +293,7 @@
             "link": "http://www.ufl.edu/",
             "positions": [{
                 "name":"Master of Science",
-                "description": "Computer science",
+                "description": "Computer science | GPA: 3.77 / 4.0",
                 "time": "Aug 2019 - Present",
                 "timeCalc": "11 mos"
             }],
@@ -280,7 +313,9 @@
                 "timeCalc": "4 years"
             }],
             "place": "Hyderabad, India",
-            "projects": []
+            "projects": [
+                "dss"
+            ]
         }
     ]
 }
