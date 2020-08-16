@@ -1,6 +1,7 @@
 <template>
     <div class="component">
     <p class="name"><b> {{skill.name}} </b></p>    
+    <p>{{'('+skill.label+')'}}</p>   
     <radial-progress-bar
                       :diameter="size"
                       :completed-steps="percentage"
@@ -12,7 +13,7 @@
                       class="circle"
                       data-aos="fade-up"
                       data-aos-anchor-placement="center-bottom">
-              <!-- <p>{{skill.label}}</p>    -->
+              <p>{{skill.percentage+'%'}}</p>
           </radial-progress-bar>
     </div>
 </template>
@@ -64,6 +65,10 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
 p{
     margin:0px;
     font-size: 0.9rem;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;    
 }
 .circle{
     border-radius: $size/2;

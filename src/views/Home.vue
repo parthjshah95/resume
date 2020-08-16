@@ -1,15 +1,22 @@
 <template>
   <div class="home">
     <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>
+    <div v-if="bigScreen" class="contact-div">
+      <contact v-for="contact in rd.contact" :key="contact.link" :contact="contact" data-aos="slide-right"></contact>  
+    </div>  
+      
     <div class="cont-bleed">
+    
       <img alt="University of Florida" src="../assets/ben_hill_stadium.jpg" class="image-bleed">
       <div class="image-overlay"></div>
       <img class="photo" src="../assets/me.jpg" data-aos="zoom-in">
       <div class="intro" data-aos="fade-down">
         <h1>{{rd.name}}</h1>
         <h4>{{rd.field}}</h4>
+        <div class="button">Download resume</div>
         <div v-for="line in rd.intro" :key="line">{{line}}</div>
       </div>
+
       <!-- <img src="../assets/photo_big.png" class="photo-big"> -->
       <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
       <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
@@ -22,7 +29,7 @@
         <div data-aos="zoom-in">
           <ExperienceCard v-for="exp in rd.experience" v-bind:key="exp.position" v-bind:cardData="exp" v-on:openProject="showProject"></ExperienceCard>
         </div>
-      </div>
+      </div>  
       <br>
       <!-- Skills panel -->
       <!-- <div :class="bigScreen? 'panel-half-smaller': 'panel-full'"> -->
@@ -52,6 +59,7 @@ import ExperienceCard from '@/components/ExperienceCard.vue'
 import SkillRadial from '@/components/SkillRadial.vue'
 import resume_data from '@/data.json'
 import ProjectCardFull from '@/components/ProjectCardFull.vue'
+import Contact from '@/components/Contact.vue'
 
 export default {
   name: 'Home',
@@ -59,7 +67,8 @@ export default {
     // HelloWorld,
     ExperienceCard,
     SkillRadial,
-    ProjectCardFull
+    ProjectCardFull,
+    Contact
   },
   created(){
     resume_data.experience.forEach(e => {
@@ -118,6 +127,11 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
 
 html {
   overflow-x: hidden;
+}
+.contact-div{
+  position: absolute;
+  left:20px;
+  top: 10%;
 }
 @keyframes blink{
     0%  {opacity: 1;}
@@ -201,19 +215,51 @@ $scale-photo: 15px;
 h1 {
   font-size: 4rem;
   margin-bottom: 0px;
+  margin-top: 20px;
   font-family:  "Amaranth", Helvetica, sans-serif;
+  z-index: 1;
 }
 h4{
   margin-top:0px;
+  margin-bottom: 10px;
   font-size: 1.8rem;
   font-weight: 100;
   font-style: normal;
+  z-index: 1;
 }
 h2{
   @extend h4;
   color: #444;
   margin: 20px;
   font-family: "Amaranth", Helvetica, sans-serif;
+}
+$btn-color: #673AB7;
+.button{
+  width: max-content;
+  margin: 20px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: $box-shadow;
+  color: white;
+  border: 2px solid $btn-color;
+  background-color: $btn-color;
+  transition: 0.3s;
+  padding: 8px 10px;
+  cursor: pointer;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;    
+
+  &:hover{
+    border: 2px solid $btn-color;
+    background-color: white;
+    color: #512DA8;
+    box-shadow: $box-shadow-highlight;
+  }
+  &:active{
+    background-color: #D1C4E9;
+  }
 }
 .bg-wh{
   display: flex;

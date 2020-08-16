@@ -3,8 +3,29 @@
     "field": "Machine learning | Full stack",
     "intro": [
         "Hi there! Nice to meet you :)",
-        "I am a computer science graduate student at the University of Florida.",
         "Scroll down to know me better!"
+    ],
+    "contact":[
+        {
+            "img": "github.svg",
+            "link": "https://github.com/parthjshah95",
+            "label": "github.com/parthjshah95"
+        },
+        {
+            "img": "linkedin.png",
+            "link": "https://www.linkedin.com/in/parth-jayesh-shah/",
+            "label": "linkedin.com/in/parth-jayesh-shah"
+        },
+        {
+            "img": "mail_icon.svg",
+            "link": "mailto: mail@shahparth.net",
+            "label": "mail@shahparth.net"
+        },
+        {
+            "img": "phone-icon.png",
+            "link": "tel: 352-327-1943",
+            "label": "+1 (352)327-1943"
+        }
     ],
     "experience":[
         {
