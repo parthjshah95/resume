@@ -6,7 +6,7 @@
         "Hi there! Nice to meet you :)",
         "Scroll down to know me better!"
     ],
-    "about": "I am a software engineer specializing in integrating AI solutions with products.<br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching. (Don't forget to check out my sketches at the end!)",
+    "about": "I am a software engineer specializing in integrating AI solutions with products. I have a short yet diverse experience working in various areas like web development, data science, devops, backend development as well as app developement.<br><br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching. (Don't forget to check out my sketches at the end!)",
     "contact":[
         {
             "img": "github.svg",
@@ -256,7 +256,7 @@
             "label": "2 years"
         },
         {
-            "name": "Vue.js",
+            "name": "vue.js",
             "percentage": 60,
             "label": "2 years"
         },
@@ -274,6 +274,16 @@
             "name": "docker",
             "percentage": 70,
             "label":"2 years"
+        },
+        {
+            "name":"android",
+            "percentage": 40,
+            "label": "4 months"
+        },
+        {
+            "name": "iOS",
+            "percentage": 40,
+            "label": "4 months"
         },
         {
             "name": "UI design",
