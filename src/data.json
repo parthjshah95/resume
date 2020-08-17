@@ -10,6 +10,16 @@
     "resumepdf": "https://github.com/parthjshah95/resume/raw/master/downloads/Resume.pdf",
     "contact":[
         {
+            "img": "mail_icon.svg",
+            "link": "mailto: mail@shahparth.net",
+            "label": "mail@shahparth.net"
+        },
+        {
+            "img": "phone-icon.png",
+            "link": "tel: 352-327-1943",
+            "label": "+1 (352)327-1943"
+        },
+        {
             "img": "github.svg",
             "link": "https://github.com/parthjshah95",
             "label": "github.com/parthjshah95"
@@ -20,14 +30,9 @@
             "label": "linkedin.com/in/parth-jayesh-shah"
         },
         {
-            "img": "mail_icon.svg",
-            "link": "mailto: mail@shahparth.net",
-            "label": "mail@shahparth.net"
-        },
-        {
-            "img": "phone-icon.png",
-            "link": "tel: 352-327-1943",
-            "label": "+1 (352)327-1943"
+            "img": "google-scholar.svg",
+            "link": "https://scholar.google.com/citations?user=05jup1EAAAAJ&hl=en",
+            "label": "id: 05jup1EAAAAJ"
         }
     ],
     "experience":[
