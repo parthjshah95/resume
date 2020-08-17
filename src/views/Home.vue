@@ -2,38 +2,41 @@
   <div class="home">
     <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>      
     <div class="cont-bleed">
-      <div class="navbar">
-        <div class="navbtn" v-scroll-to="'#aboutme'">About me</div>
-        <div class="navbtn" v-scroll-to="'#experience'">Experience</div>
-        <div class="navbtn" v-scroll-to="'#skills'">Skills</div>
-        <div class="navbtn" v-scroll-to="'#education'">Education</div>
+      <div :class="bigScreen? navbar: 'navbar-small'">
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#aboutme'">About me</div>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#experience'">Experience</div>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#skills'">Skills</div>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#education'">Education</div>
       </div>
       <img alt="University of Florida" src="../assets/ben_hill_stadium.jpg" class="image-bleed">
       <div class="image-overlay"></div>
-      <img class="photo" :src="require(`../assets/${rd.photo}`)" data-aos="zoom-in">
+      <img :class="bigScreen? photo: 'photo-small'" :src="require(`../assets/${rd.photo}`)" data-aos="zoom-in">
       <div class="intro" data-aos="fade-down">
-        <h1>{{rd.name}}</h1>
-        <h4>{{rd.field}}</h4>
-        <div class="button">Download resume</div>
+        <div :class="bigScreen? 'name-big': 'name-small'">{{rd.name}}</div>
+        <div :class="bigScreen? 'field-big': 'field-small'">{{rd.field}}</div>
+        <a class="button" :href="rd.resumepdf">Download resume</a>
         <div v-for="line in rd.intro" :key="line">{{line}}</div>
       </div>
       <div v-if="bigScreen" class="contact-div">
-        <contact v-for="contact in rd.contact" :key="contact.link" :contact="contact" data-aos="slide-right"></contact>  
+        <contact v-for="contact in rd.contact" :key="contact.link" :contact="contact"  data-aos="slide-right"></contact>  
+      </div>
+      <div v-else class="contact-div-small">
+        <contactSmall  v-for="contact in rd.contact" :key="contact.link" :contact="contact"  data-aos="slide-up"></contactSmall>
       </div>
       <!-- <img src="../assets/photo_big.png" class="photo-big"> -->
       <!-- <iframe class="down" src="https://giphy.com/embed/UrzWDQ3VTiDU84R5dx"></iframe> -->
-      <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
-      <a class="template-msg" href="https://github.com/parthjshah95/resume">
-        Use this template for your resume.
+      <a v-if="bigScreen" class="template-msg" href="https://github.com/parthjshah95/resume">
+        Use this template for your live resume.
         <br>
         Made with ❤️ by Parth Shah.
       </a>
+      <img class="down-big blinking" src="../assets/keyboard-down-arrow.png">
     </div>
     <div :class="bg_wh">
       <!-- About me -->
       <div class="panel-full" id="aboutme">
         <h2 data-aos="zoom-in">About me</h2>
-        <p class="about" v-html="rd.about"></p>
+        <p class="about" v-html="rd.about" data-aos="zoom-in"></p>
       </div>
       <!-- Experience panel -->
       <!-- <div :class="bigScreen? 'panel-half-bigger': 'panel-full'"> -->
@@ -73,6 +76,7 @@ import SkillRadial from '@/components/SkillRadial.vue'
 import resume_data from '@/data.json'
 import ProjectCardFull from '@/components/ProjectCardFull.vue'
 import Contact from '@/components/Contact.vue'
+import ContactSmall from '@/components/ContactSmall.vue'
 
 export default {
   name: 'Home',
@@ -81,7 +85,8 @@ export default {
     ExperienceCard,
     SkillRadial,
     ProjectCardFull,
-    Contact
+    Contact,
+    ContactSmall
   },
   created(){
     resume_data.experience.forEach(e => {
@@ -112,7 +117,17 @@ export default {
       'rd': resume_data,
       'panel-half-bigger': "panel-half-bigger",
       'panel-full': "panel-full",
-      'projectShown': null
+      'projectShown': null,
+      'name-big': 'name-big',
+      'name-small': 'name-small',
+      'field-big': 'field-big',
+      'field-small': 'field-small',
+      photo: 'photo',
+      'photo-small': 'photo-small',
+      navbtn: 'navbtn',
+      'navbtn-small': 'navbtn-small',
+      'navbar': 'navbar',
+      'navbar-small': 'navbar-small'
     };
   },
   computed:{
@@ -137,6 +152,11 @@ $bg-padding-small: 10px;
 $arrow-size: 70px;
 $box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
+$photo-size: 200px;
+$photo-size-small: 150px;
+$margin-top-photo: 80px;
+$margin-top-photo-small: 80px;
+$scale-photo: 15px;
 
 html {
   overflow-x: hidden;
@@ -153,6 +173,12 @@ html {
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;    
 }
+.navbar-small{
+  @extend .navbar;
+  right: 0px;
+  left: 0px;
+  top: 20px;
+}
 .navbtn{
   padding: 5px 10px;
   border-radius: 10px;
@@ -164,10 +190,9 @@ html {
     color: #D1C4E9;
   }
 }
-.contact-div{
-  position: absolute;
-  left:20px;
-  top: 10%;
+.navbtn-small{
+  @extend .navbtn;
+  font-size: 0.7rem;
 }
 @keyframes blink{
     0%  {opacity: 1;}
@@ -197,10 +222,6 @@ html {
   z-index: -1;
   background-color: rgba(64, 55, 105, 0.9);
 }
-
-$photo-size: 200px;
-$margin-top-photo: 50px;
-$scale-photo: 15px;
 .photo{
   margin-left: auto;
   margin-right: auto;
@@ -217,12 +238,36 @@ $scale-photo: 15px;
     margin-bottom: 0px;
   }
 }
-.photo-big{
+.photo-small{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $margin-top-photo-small;
+  margin-bottom: $scale-photo/2;
+  width: $photo-size-small;
+  border-radius: $photo-size-small;
+  box-shadow: $box-shadow;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: $box-shadow-highlight;
+    width: $photo-size-small + $scale-photo;
+    margin-top: $margin-top-photo - ($scale-photo/2);
+    margin-bottom: 0px;
+  }
+}
+// .photo-big{
+//   position: absolute;
+//   max-height: 1000px;
+//   height: 100%;
+//   right: 10px;
+//   bottom: -30%;
+// }
+.contact-div{
   position: absolute;
-  max-height: 1000px;
-  height: 100%;
-  right: 10px;
-  bottom: -30%;
+  top: 20%;
+}
+.contact-div-small{
+  position: relative;
+  margin-top: 20px;
 }
 .down-big{
   position: fixed;
@@ -265,16 +310,22 @@ $scale-photo: 15px;
   margin: 50px;
 }
 .intro{
+  display: block;
+  position: relative;
   color:white;
 }
-h1 {
+.name-big {
   font-size: 4rem;
   margin-bottom: 0px;
   margin-top: 20px;
   font-family:  "Amaranth", Helvetica, sans-serif;
   z-index: 1;
 }
-h4{
+.name-small {
+  @extend .name-big;
+  font-size: 2rem;
+}
+.field-big{
   margin-top:0px;
   margin-bottom: 10px;
   font-size: 1.8rem;
@@ -282,14 +333,19 @@ h4{
   font-style: normal;
   z-index: 1;
 }
+.field-small{
+  @extend .field-big;
+  font-size: 1rem;
+}
 h2{
-  @extend h4;
+  @extend .field-big;
   color: #444;
   margin: 20px;
   font-family: "Amaranth", Helvetica, sans-serif;
 }
 $btn-color: #673AB7;
 .button{
+  text-decoration: none;
   width: max-content;
   margin: 20px auto;
   display: block;
@@ -308,7 +364,7 @@ $btn-color: #673AB7;
 
   &:hover{
     border: 2px solid $btn-color;
-    background-color: white;
+    background-color: #EDE7F6;
     color: #512DA8;
     box-shadow: $box-shadow-highlight;
   }

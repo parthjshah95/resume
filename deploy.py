@@ -2,7 +2,7 @@ import os
 import datetime
 import shutil
 
-domain = "parthshah.ml"
+domain = "shahparth.net"
 
 def done():
     print("done")

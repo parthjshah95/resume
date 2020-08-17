@@ -4,7 +4,7 @@
             <div class="close" v-on:click="$emit('close')"></div>
             <img class="image" :src="require(`../assets/${image}`)">
             <div class="info">
-                <h4 class="title">{{projectData.title}}</h4>
+                <h1 class="title">{{projectData.title}}</h1>
                 <div class="subtitle">{{projectData.subtitle}}</div>
                 <p class="justify">
                     <span class="link"><a :href="projectData.link">{{projectData.link}}</a></span>

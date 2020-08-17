@@ -2,7 +2,7 @@
     <a class="contact" :href="contact.link" width="50px" height="50px">
         <div class="overlay"></div>
         <img :src="require(`../assets/${contact.img}`)" class="icon">
-        <p class="label">{{contact.label}}</p>
+        <p class="label"    >{{contact.label}}</p>
     </a>
 </template>
 <script>
@@ -18,6 +18,8 @@ $size: 30px;
 $padding: 5px;
 $box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
+$transition-icon: 100ms;
+$transition-label: 800ms;
 
 .contact{
     margin: 20px;
@@ -36,7 +38,7 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
     border-radius: ($size / 2);
     background-color: white;
     box-shadow: $box-shadow;
-    transition: 0.1s;
+    transition: $transition-icon;
     cursor: pointer;
     z-index: 11;
 }
@@ -76,8 +78,8 @@ $box-shadow-highlight: 0 5px 30px rgba(0,0,0,0.19), 0 3px 15px rgba(0,0,0,0.23);
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;   
-    -webkit-transition: opacity 600ms, visibility 600ms;
-    transition: opacity 600ms, visibility 600ms;
+    -webkit-transition: opacity $transition-label, visibility $transition-label;
+    transition: opacity $transition-label, visibility $transition-label;
     font-weight: bold;
 }
 

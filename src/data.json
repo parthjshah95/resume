@@ -7,6 +7,7 @@
         "Scroll down to know me better!"
     ],
     "about": "I am a software engineer specializing in integrating AI solutions with products. I have a short yet diverse experience working in various areas like web development, data science, devops, backend development as well as app developement.<br><br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching. (Don't forget to check out my sketches at the end!)",
+    "resumepdf": "https://github.com/parthjshah95/resume/raw/master/downloads/Resume.pdf",
     "contact":[
         {
             "img": "github.svg",
@@ -210,7 +211,55 @@
             "desc": "lorem ipsum dolor sit amet",
             "keywords": [
                 "Brain computer interface",
-                "Electro encephalgraphy"
+                "Electroencephalography"
+            ]
+        },
+        "garbage": {
+            "title": "Smart Monitoring System",
+            "img": {
+                "nano": "garbage.jpg",
+                "large": "garbage.jpg"
+            },
+            "link":"https://github.com/parthjshah95/Smart-monitoring-system",
+            "time": "Nov 2015",
+            "desc": "Handling the massive amounts of garbage produced in typical Indian cities has always been a tough job for the local administrators. The aim of this project was to make a smart monitoring system which will provide vital logistical support to the civic bodies in solid waste management.",
+            "keywords": [
+                "Internet of Things",
+                "smart city",
+                "ultrasonic sensing",
+                "solid waste management"
+            ]
+        },
+        "noc": {
+            "title": "Network-on-chip",
+            "subtitle": "Fault tolerant application specific network-on-chip",
+            "time": "Jan 2017 - May 2017",
+            "link": "https://github.com/parthjshah95/PoorestNeighbourAlgorithm",
+            "desc": "Network-on-chip is a big component of the state-of-the-art chip architectures today. In this publication we propose We propose a greedy algorithm to generate fault tolerant network topologies which performs better than the classic minimum spanning tree or the popular De-Bruijn’s algorithm on metrics like the communication cost and hardware requirements. <br><br><small>This work is partially supported by the research project No. ECR/2016/001389 dt. 06/03/2017, sponsored by the SERB, Govt. of India.</small> <br><br> <small><b>Publication: </b><a href=\"http://doi.org/10.1109/ISED.2017.8303920\">10.1109/ISED.2017.8303920</a><br>P. Shah, A. Kanniganti and J. Soumya, \"Fault-tolerant application specific Network-on-Chip design,\" 2017 7th International Symposium on Embedded Computing and System Design (ISED), Durgapur, 2017, pp. 1-5.</small>",
+            "img": {
+                "nano": "noc.png",
+                "large": "noc.png"
+            },
+            "keywords":[
+                "fault tolerance",
+                "network-on-chip",
+                "greedy algorithm",
+                "graph theory"
+            ]
+        },
+        "this": {
+            "title": "This website",
+            "link": "https://github.com/parthjshah95/resume",
+            "time": "Aug 2020",
+            "img": {
+                "nano": "this_site.jpg",
+                "large": "recursion.gif"
+            },
+            "desc": "An open and free interactive live resume template. Designed from scratch and implemented using the <a href=\"https://vuejs.org\">Vue.js</a> framework. <br><br> A bit of <a href=\"https://shahparth.net/\">recursion</a> is always fun! Use this <a href=\"https://github.com/parthjshah95/resume\">template</a> for your own site.",
+            "keywords": [
+                "UI design",
+                "web development",
+                "Vue.js"
             ]
         }
     },
@@ -309,7 +358,8 @@
             }],
             "place": "Gainesville, Fl",
             "projects": [
-                "fml"
+                "fml",
+                "this"
             ]
         },
         {
@@ -324,6 +374,8 @@
             }],
             "place": "Hyderabad, India",
             "projects": [
+                "noc",
+                "garbage",
                 "dss"
             ]
         }
