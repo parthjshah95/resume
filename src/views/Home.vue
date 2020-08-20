@@ -163,7 +163,7 @@ html {
   overflow-x: hidden;
 }
 .flashing-message{
-  color: #EF9A9A;
+  color: #D1C4E9;
   position: absolute;
   left: 30px;
   top: 20px;
