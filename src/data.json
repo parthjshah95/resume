@@ -166,7 +166,7 @@
                 "nano": "live_sense.jpg",
                 "large": "live_sense.jpg"
             },
-            "desc": "Rapid prototyping and R&D for a technical feasibility study for a new product. Successful completion of the same lead to the eventual release of the <a href=\"https://www.here.com/platform/location-based-services/live-sense-sdk\">HERE LiveSense SDK</a>. To quote HERE, this is <q>an AI-powered SDK that transforms camera-enabled devices into hazard awareness sensors for drivers.</q> <br>Real-time object detection on edge devices with hardware constraints was very challenging as well as fun to solve. We worked on Android as well as iOS versions of the SDK.",
+            "desc": "Rapid prototyping, R&D and a technical feasibility study for a new product. Successful completion of the same led to the eventual release of the <a href=\"https://www.here.com/platform/location-based-services/live-sense-sdk\">HERE LiveSense SDK</a>.  This SDK provided critical alerts and hazard awareness to drivers using object detection. It also automated collection of fresh map data in the background.<br><br> Real-time object detection, multi-object tracking and distance estimation from 2d image stream, on edge devices with hardware constraints was very challenging as well as fun to solve. We worked on Android as well as iOS versions of the SDK.",
             "keywords": [
                 "computer vision",
                 "real time object detection"
