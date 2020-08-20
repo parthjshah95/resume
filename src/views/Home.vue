@@ -2,6 +2,7 @@
   <div class="home">
     <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>      
     <div class="cont-bleed">
+      <div class="flashing-message blinking">Actively looking for full time opportunities</div>
       <div :class="bigScreen? navbar: 'navbar-small'">
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#aboutme'">About me</div>
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#experience'">Experience</div>
@@ -160,6 +161,13 @@ $scale-photo: 15px;
 
 html {
   overflow-x: hidden;
+}
+.flashing-message{
+  color: #EF9A9A;
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  font-size: 1rem;
 }
 .navbar{
   color: white;
