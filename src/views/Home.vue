@@ -2,7 +2,7 @@
   <div class="home">
     <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>      
     <div class="cont-bleed">
-      <div class="flashing-message blinking">Actively looking for full time opportunities</div>
+      <div v-if="bigScreen" class="flashing-message blinking">Actively looking for full time opportunities</div>
       <div :class="bigScreen? navbar: 'navbar-small'">
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#aboutme'">About me</div>
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#experience'">Experience</div>
