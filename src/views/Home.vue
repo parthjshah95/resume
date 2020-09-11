@@ -66,6 +66,16 @@
         </div>
       </div>
     </div>
+    <div :class="bigScreen? 'bg-prpl': 'bg-prpl-small'">
+      <div :class="bigScreen? 'template-msg-bottom': 'template-msg-bottom-small'">
+        &copy Resume template made with ❤️ by <br>
+        <a class="white-link" href="https://shahparth.net">Parth Shah</a>.<br><br>
+        <a class="white-link" href="https://github.com/parthjshah95/resume">
+          Use this template for your own live resume.
+          <br>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -128,7 +138,11 @@ export default {
       navbtn: 'navbtn',
       'navbtn-small': 'navbtn-small',
       'navbar': 'navbar',
-      'navbar-small': 'navbar-small'
+      'navbar-small': 'navbar-small',
+      'template-msg-bottom': 'template-msg-bottom',
+      'template-msg-bottom-small': 'template-msg-bottom-small',
+      'bg-prpl': 'bg-prpl',
+      'bg-prpl-small': 'bg-prpl-small'
     };
   },
   computed:{
@@ -395,5 +409,26 @@ $btn-color: #673AB7;
   @extend .bg-wh;
   padding: $bg-padding-small;
 }
-
+.bg-prpl{
+  @extend .bg-wh;
+  background-color: #673AB7;
+  min-height: 50px;
+  color: white;
+}
+.bg-prpl-small{
+  @extend .bg-prpl;
+  padding: $bg-padding-small;
+}
+.template-msg-bottom{
+  margin: auto;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.template-msg-bottom-small{
+  @extend .template-msg-bottom;
+  font-size: 0.7rem;
+}
+.white-link{
+  color: white;
+}
 </style>

@@ -1,12 +1,12 @@
 {
     "name": "PARTH SHAH",
-    "field": "Machine learning | Full stack",
+    "field": "Computer Vision | Full stack",
     "photo": "me.jpg",
     "intro": [
         "Hi there! Nice to meet you :)",
         "Scroll down to know me better!"
     ],
-    "about": "I am a software engineer specializing in integrating AI solutions with products. I have a short yet diverse experience working in various areas like web development, data science, devops, backend development as well as app developement. I love to get involved in the entire lifecycle of a product - from brainstorming product ideas, design, implementation, model training to deployment at scale and devops.<br><br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree in Computer Science. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching.",
+    "about": "I am a software engineer specializing in integrating AI solutions with products. I have a short yet diverse experience working in various areas like web development, data science, devops, backend development as well as mobile app development. I love to get involved in the entire lifecycle of a product - from brainstorming product ideas, design, implementation, model training to deployment at scale and devops.<br><br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree in Computer Science. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching.",
     "resumepdf": "https://github.com/parthjshah95/resume/raw/master/downloads/Resume.pdf",
     "contact":[
         {
