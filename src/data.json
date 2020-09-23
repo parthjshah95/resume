@@ -179,7 +179,7 @@
                 "nano":"duppoi.jpg",
                 "large":"duppoi_1.jpg"
             },
-            "desc": "Crowdsourced or data aggregated from different sources causes a lot fo duplicate places in geospatial data. This project aimed to reduce/eliminate human work hours required to identify and remove such duplicates.<br><br>The real challenge of the project was to understand the needs of Subject Matter Experts (SMEs) and concretize the problem statement. Subsequently, implementing, rigorous testing and large scale deployment of the models also was a fun process.",
+            "desc": "Crowdsourced or data aggregated from different sources causes a lot of duplicate places in geospatial data. This project aimed to reduce/eliminate human work hours required to identify and remove such duplicates.<br><br>The real challenge of the project was to understand the needs of Subject Matter Experts (SMEs) and concretize the problem statement. Subsequently, implementing, rigorous testing and large scale deployment of the models was also a fun process.",
             "keywords": [
                 "word embeddings",
                 "statistical machine learning",
@@ -193,7 +193,7 @@
                 "nano": "fml.png",
                 "large": "fml.png"
             },
-            "desc": "Final project for the course (EEL5840) Fundamentals of Machine Learning. Achieved the highest test accuracy on the classification task amongst all submissions.",
+            "desc": "Final project for the course (EEL5840) Fundamentals of Machine Learning. Achieved the highest test accuracy on the classification task amongst all submissions in the class.",
             "keywords":[
                 "image classification",
                 "mnist"

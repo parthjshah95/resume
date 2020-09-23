@@ -80,8 +80,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import SkillRadial from '@/components/SkillRadial.vue'
 import resume_data from '@/data.json'
@@ -92,7 +90,6 @@ import ContactSmall from '@/components/ContactSmall.vue'
 export default {
   name: 'Home',
   components: {
-    // HelloWorld,
     ExperienceCard,
     SkillRadial,
     ProjectCardFull,
@@ -411,6 +408,7 @@ $btn-color: #673AB7;
 }
 .bg-prpl{
   @extend .bg-wh;
+  box-shadow: $box-shadow-highlight;
   background-color: #673AB7;
   min-height: 50px;
   color: white;
