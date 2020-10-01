@@ -104,7 +104,7 @@
                 "nano": "vae_nano.png",
                 "large": "vae_large.jpg"
             },
-            "desc":"<small><b><i>(In Progress)</i></b></small> <br>We propose a novel architecture for autoencoders and variational autoencoders for the associated problem statements in image compression and image generation. This method is also easily extensible to higher dimensional data like in scientific data domains, which is the primary focus of this project. <br> Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
+            "desc":"<small><b><i>(In Progress)</i></b></small> <br>Designing novel State-of-the-art architectures for autoencoders and variational autoencoders for high dimensional data compression/generation. This is in support of exascale computing at the Princeton Plasma Physics Laboratory and in collaboration with Oak Ridge National Laboratory.<br> Advisors: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
             "keywords": [
                 "autoencoders",
                 "data compression",
