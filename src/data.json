@@ -273,7 +273,7 @@
         {
             "name":"python",
             "percentage": 90,
-            "label": "2 years"
+            "label": "3 years"
         },
         {
             "name":"java",
@@ -286,18 +286,28 @@
             "label": "3 years"
         },
         {
-            "name":"scala",
-            "percentage":60,
-            "label": "2 years"
-        },
-        {
-            "name": "sql",
-            "percentage": 60,
-            "label": "2 years"
-        },
-        {
             "name": "pytorch",
-            "percentage": 75,
+            "percentage": 95,
+            "label": "1 year"
+        },
+        {
+            "name": "keras",
+            "percentage": 70,
+            "label": "5 months"
+        },
+        {
+            "name": "numpy",
+            "percentage": 95,
+            "label": "1 year"
+        },
+        {
+            "name": "sklearn",
+            "percentage": 70,
+            "label": "1 year"
+        },
+        {
+            "name":"pandas",
+            "percentage": 70,
             "label": "1 year"
         },
         {
@@ -312,6 +322,26 @@
         },
         {
             "name": "vue.js",
+            "percentage": 60,
+            "label": "2 years"
+        },
+        {
+            "name": "iOS",
+            "percentage": 40,
+            "label": "4 months"
+        },
+        {
+            "name": "swift",
+            "percentage": 50,
+            "label": "5 months"
+        },
+        {
+            "name":"scala",
+            "percentage":60,
+            "label": "2 years"
+        },
+        {
+            "name": "sql",
             "percentage": 60,
             "label": "2 years"
         },
@@ -332,11 +362,6 @@
         },
         {
             "name":"android",
-            "percentage": 40,
-            "label": "4 months"
-        },
-        {
-            "name": "iOS",
             "percentage": 40,
             "label": "4 months"
         },
