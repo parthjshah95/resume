@@ -286,6 +286,11 @@
             "label": "3 years"
         },
         {
+            "name": "C++",
+            "percentage":"70",
+            "label": "1 year"
+        },
+        {
             "name": "pytorch",
             "percentage": 95,
             "label": "1 year"
