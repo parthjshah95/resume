@@ -37,6 +37,20 @@
     ],
     "experience":[
         {
+            "img": "Brainforce_1.png",
+            "institute": "BrainForce",
+            "link": "https://brainforce.us/",
+            "positions": [
+                {
+                    "name": "Founder",
+                    "description": "Co-founder: <a href=\"https://www.linkedin.com/in/patilmohit/\">Mohit Patil</a>",
+                    "time": "Jan 2021 - Present"
+                }
+            ],
+            "place": "Gainesville, Fl",
+            "projects": ["big_idea"]
+        },
+        {
             "img": "UF_logo.jpg",
             "institute": "University of Florida",
             "link": "http://www.ufl.edu/",
@@ -44,7 +58,7 @@
                 {
                     "name": "Research assistant",
                     "description": "Principal investigators: <a href=\"https://www.cise.ufl.edu/ranka-sanjay/\">Dr. Ranka</a> and <a href=\"https://www.cise.ufl.edu/rangarajan-anand/\">Dr. Rangarajan</a>",
-                    "time": "Oct 2019 - Present",
+                    "time": "Oct 2019 - May 2021",
                     "timeCalc": "11 mos"
                 },
                 {
@@ -55,7 +69,7 @@
                 }
             ],
             "place": "Gainesville, Fl",
-            "projects": ["vae", "atspm", "iheal"]
+            "projects": ["thesis", "vae", "atspm", "iheal"]
         },
         {
             "img": "HERE_logo.png",
@@ -96,10 +110,33 @@
         }
     ],
     "projects": {
+        "big_idea": {
+            "title": "BrainForce wins $25,000 in 2021 Big Idea Competition",
+            "subtitle": "Warrington College of Business: Newsroom",
+            "link": "https://news.warrington.ufl.edu/students/brainforce-wins-25000-in-2021-big-idea-competition/",
+            "desc": "BrainForce empowers the disabled by providing hands-free operation of phones and computers to those who cannot use their upper limbs. We aim to empower users with the same level of productivity with smart devices as everyone else at work, school, or home for personal daily use. This is achieved via head-wearables containing a gyroscope that tracks the user’s head movements. These head movements in turn control a mouse on the user’s screen.",
+            "time": "Jan 2021 - May 2020",
+            "img": {
+                "nano": "BrainForce-newsroom.jpg",
+                "large": "BrainForce-newsroom.jpg"
+            },
+            "keywords": []
+        },
+        "thesis": {
+            "title": "Master's thesis",
+            "subtitle": "Learnt lossy data compression for large scientific simultations",
+            "time": "Jan 2021 - May 2020",
+            "img": {
+                "nano": "thesis_nano.jpg",
+                "large": "thesis_nano.jpg"
+            },
+            "desc": "With checkpoint file sizes reaching into exabytes, I/O bottlenecks pose a significant challenge for modern large scale scientific simulations. This thesis proposes two learnt techniques to provide high degrees of compression, albeit lossy, to significantly reduce a checkpoint’s size. It is shown that these methods compare favorably with the leading lossy compressors like ZFP and offer far higher compression ratios than lossless compressors like Gzip. The first method utilizes tucker decomposition while the second uses autoencoders for reducing the dimensionality of floating point tensors. Both are subsequently coupled with the product quantizer to efficiently discretize floating point numbers into integers. The popular OpenFOAM toolkit and the exascale XGC simulator are used to evaluate compression errors.",
+            "keywords": []
+        },
         "vae": {
-            "title": "VAE - Scientific data compression",
+            "title": "Scientific data compression",
             "subtitle": "Modern Artificial Intelligence and Learning Technologies (MALT) lab",
-            "time": "Mar 2020 - Present",
+            "time": "Mar 2020 - Dec 2020",
             "img":{
                 "nano": "vae_nano.png",
                 "large": "vae_large.jpg"

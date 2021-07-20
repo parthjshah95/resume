@@ -4,9 +4,44 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
+    <!-- <div :class="bigScreen? navbar: 'navbar-small'">
+        <router-link :class="bigScreen? navbtn: 'navbtn-small'" to="/about">About</router-link>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#aboutme'">About me</div>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#experience'">Experience</div>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#skills'">Skills</div>
+        <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#education'">Education</div>
+    </div> -->
     <router-view/>
   </div>
 </template>
+<script>
+import Home from '@/views/Home.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Home
+  },
+  computed:{
+    windowWidth() {
+      return this.$parent.windowWidth;
+    },
+    bigScreen(){
+      return this.windowWidth > 800;
+    }
+  },
+  data(){
+    return {
+      navbtn: 'navbtn',
+      'navbtn-small': 'navbtn-small',
+      'navbar': 'navbar',
+      'navbar-small': 'navbar-small',
+
+    }
+  }
+}
+</script>
+
 
 <style lang="scss">
 
@@ -18,14 +53,6 @@ $junction-dir: "assets/fonts/junction/";
        url($junction-dir+'junction-regular.woff') format('woff'), /* Modern Browsers */
        url($junction-dir+'junction-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
-
-// $junction-dir: "assets/fonts/raleway/";
-// @font-face {
-//   font-family: 'Raleway';
-//   src: url($junction-dir+'raleway_thin-webfont.eot'), /* IE9 Compat Modes */
-//        url($junction-dir+'raleway_thin-webfont.woff') format('woff'), /* Modern Browsers */
-//        url($junction-dir+'raleway_thin-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-// }
 
 $junction-dir: "assets/fonts/Aftasans/";
 @font-face {
@@ -52,16 +79,4 @@ $junction-dir: "assets/fonts/Amaranth/";
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

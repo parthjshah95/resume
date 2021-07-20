@@ -2,8 +2,9 @@
   <div class="home">
     <ProjectCardFull v-if="projectShown" :projectData="projectShown" v-on:close="closeProject"></ProjectCardFull>      
     <div class="cont-bleed">
-      <div v-if="bigScreen" class="flashing-message blinking">Actively looking for full time opportunities</div>
+      <!-- <div v-if="bigScreen" class="flashing-message blinking">Actively looking for full time opportunities</div> -->
       <div :class="bigScreen? navbar: 'navbar-small'">
+        <!-- <router-link :class="bigScreen? navbtn: 'navbtn-small'" to="/blogs">Blogs</router-link> -->
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#aboutme'">About me</div>
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#experience'">Experience</div>
         <div :class="bigScreen? navbtn: 'navbtn-small'" v-scroll-to="'#skills'">Skills</div>
@@ -181,7 +182,6 @@ html {
   font-size: 1rem;
 }
 .navbar{
-  color: white;
   position: absolute;
   right: 20px;
   top: 30px;
@@ -199,6 +199,7 @@ html {
   top: 20px;
 }
 .navbtn{
+  color: white;
   padding: 5px 10px;
   border-radius: 10px;
   display: inline;
@@ -212,6 +213,10 @@ html {
 .navbtn-small{
   @extend .navbtn;
   font-size: 0.7rem;
+}
+router-link{
+  @extend .navbtn;
+  text-decoration: none;
 }
 @keyframes blink{
     0%  {opacity: 1;}
