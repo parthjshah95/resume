@@ -1,12 +1,12 @@
 {
     "name": "PARTH SHAH",
-    "field": "Computer Vision | Full stack",
+    "field": "Co-founder @ Abilitare",
     "photo": "me.jpg",
     "intro": [
         "Hi there! Nice to meet you :)",
         "Scroll down to know me better!"
     ],
-    "about": "I am a software engineer specializing in integrating AI solutions with products. I have a short yet diverse experience working in various areas like web development, data science, devops, backend development as well as mobile app development. I love to get involved in the entire lifecycle of a product - from brainstorming product ideas, design, implementation, model training to deployment at scale and devops.<br><br> I am currently a graduate research assistant at the University of Florida, pursuing a Master's degree in Computer Science. My current research interests are Variational Autoencoders and data compression. <br><br> When not fooling around with deep learning architectures, I like cooking and sketching.",
+    "about": "I love to get involved in the entire lifecycle of a product - from brainstorming ideas, design, implementation, management, marketing to support. At Abilitare, I help build the head-controlled mouse, which is a hands-free alternative for those with hand disabilities to operate computers and smartphones.<br><br> When not helping the disabled gain digital access, I like fooling around with deep learning architectures, cooking and sketching.",
     "resumepdf": "https://github.com/parthjshah95/resume/raw/master/downloads/Resume.pdf",
     "contact":[
         {
@@ -37,9 +37,9 @@
     ],
     "experience":[
         {
-            "img": "Brainforce_1.png",
-            "institute": "BrainForce",
-            "link": "https://brainforce.us/",
+            "img": "Abilitare.png",
+            "institute": "Abilitare",
+            "link": "https://abilitare.com",
             "positions": [
                 {
                     "name": "Founder",
@@ -48,7 +48,7 @@
                 }
             ],
             "place": "Gainesville, Fl",
-            "projects": ["big_idea"]
+            "projects": ["abilitare", "big_idea"]
         },
         {
             "img": "UF_logo.jpg",
@@ -110,11 +110,23 @@
         }
     ],
     "projects": {
+        "abilitare":{
+            "title": "Abilitare",
+            "subtitle": "",
+            "link": "https://abilitare.com",
+            "desc": "Abilitare enables those with hand disabities with hands-free access to smartphones and computers. A sensor worn behind the ear tracks user's head movements and makes the mouse cursor move accordingly. Simply put, look up to make the cursor move up, look down to move it down or look left or right to make the mouse cursor move seidways. <br/>With this head-controlled mouse, we aim to empower them with the same level of productivity with smart devices as everyone else at work, school, or home.",
+            "time": "Jan 2021 - Presnt",
+            "img": {
+                "nano": "Abilitare.png",
+                "large": "demo_0.gif"
+            },
+            "keywords": ["Head-mouse", "Carpal tunnel syndrome", "quadriplegia", "spinal cord injury", "ALS"]
+        },
         "big_idea": {
             "title": "BrainForce wins $25,000 in 2021 Big Idea Competition",
             "subtitle": "Warrington College of Business: Newsroom",
             "link": "https://news.warrington.ufl.edu/students/brainforce-wins-25000-in-2021-big-idea-competition/",
-            "desc": "BrainForce empowers the disabled by providing hands-free operation of phones and computers to those who cannot use their upper limbs. We aim to empower users with the same level of productivity with smart devices as everyone else at work, school, or home for personal daily use. This is achieved via head-wearables containing a gyroscope that tracks the user’s head movements. These head movements in turn control a mouse on the user’s screen.",
+            "desc": "Brainforce is now Abilitare! <a href=\"https://abilitare.com\">www.abilitare.com</a> <br/>We continue or mission to help those with hand disabilities gain access to computers and smartphones.",
             "time": "Jan 2021 - May 2020",
             "img": {
                 "nano": "BrainForce-newsroom.jpg",
@@ -323,8 +335,13 @@
             "label": "3 years"
         },
         {
+            "name":"fusion 360",
+            "percentage":40,
+            "label": "6 months"
+        },
+        {
             "name": "C++",
-            "percentage":"70",
+            "percentage":70,
             "label": "1 year"
         },
         {
@@ -415,7 +432,7 @@
         {
             "name": "sense of humor",
             "percentage": 95,
-            "label": "25 years"
+            "label": "26 years"
         }
     ],
     "education": [
