@@ -16,7 +16,8 @@
       <div class="intro" data-aos="fade-down">
         <div :class="bigScreen? 'name-big': 'name-small'">{{rd.name}}</div>
         <div :class="bigScreen? 'field-big': 'field-small'">{{rd.field}}</div>
-        <a class="button" :href="rd.resumepdf">Download resume</a>
+        <!-- <a class="button" :href="rd.resumepdf">Download resume</a> -->
+        <a class="button" href="mailto: mail@shahparth.net">Get in touch!</a>
         <div v-for="line in rd.intro" :key="line">{{line}}</div>
       </div>
       <div v-if="bigScreen" class="contact-div">
