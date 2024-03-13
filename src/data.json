@@ -322,12 +322,22 @@
         {
             "name":"python",
             "percentage": 90,
-            "label": "3 years"
+            "label": "6 years"
+        },
+        {
+            "name": "dart",
+            "percentage": 90,
+            "label": "1 year"
+        },
+        {
+            "name": "flutter",
+            "percentage": 90,
+            "label": "1 year"
         },
         {
             "name":"java",
             "percentage":80,
-            "label": "3 years"
+            "label": "6 years"
         },
         {
             "name":"javascript",
