@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parth Shah &mdash; Resume</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in 0.65in;
+        }
+
+        :root {
+            --link-blue: #0a4dd2;
+            --rule-color: #1a1a1a;
+            --muted: #333;
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            background: #fff;
+            font-family: "Charter", "Georgia", "Times New Roman", Times, serif;
+            font-size: 10.5pt;
+            line-height: 1.32;
+        }
+
+        body {
+            max-width: 7.5in;
+            margin: 0 auto;
+            padding: 0.4in 0.65in;
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        a { color: var(--link-blue); text-decoration: underline; }
+
+        /* ---------- Header ---------- */
+        header { text-align: center; margin-bottom: 0.18in; }
+        h1.name {
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin: 0 0 4pt;
+        }
+        .contact {
+            font-size: 9.5pt;
+            color: var(--muted);
+        }
+        .contact a { color: var(--link-blue); }
+        .contact .sep { color: #999; padding: 0 4pt; }
+
+        /* ---------- Section heading ---------- */
+        h2.section {
+            font-size: 12pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: 14pt 0 4pt;
+            padding-bottom: 2pt;
+            border-bottom: 1pt solid var(--rule-color);
+        }
+
+        /* ---------- Job / Education entry ---------- */
+        .entry { margin-top: 6pt; }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1em;
+        }
+        .row .left { font-weight: 700; }
+        .row .right { font-weight: 700; white-space: nowrap; }
+
+        .row.position .left,
+        .row.position .right {
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 3pt 0 4pt 0;
+            padding-left: 14pt;
+        }
+        ul li { margin: 1pt 0; }
+        ul ul {
+            margin: 1pt 0 1pt 0;
+            padding-left: 14pt;
+            list-style-type: none;
+        }
+        ul ul li::before {
+            content: "\2013\00a0";
+            margin-left: -10pt;
+        }
+
+        b, strong { font-weight: 700; }
+
+        .skills li { margin: 1pt 0; }
+        .pubs li { margin: 4pt 0; line-height: 1.3; }
+
+        .small { font-size: 9.5pt; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="name">PARTH SHAH</h1>
+    <div class="contact">
+        (352)&nbsp;327-1943
+        <span class="sep">|</span>
+        <a href="mailto:mail@shahparth.net">mail@shahparth.net</a>
+        <span class="sep">|</span>
+        <a href="https://www.shahparth.net">www.shahparth.net</a>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/parth-jayesh-shah/">linkedin.com/in/parth-jayesh-shah</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/parthjshah95">github.com/parthjshah95</a>
+    </div>
+</header>
+
+<h2 class="section">Work Experience</h2>
+
+<!-- ============ MedFinder ============ -->
+<div class="entry">
+    <div class="row">
+        <span class="left">MedFinder (Insito Health)</span>
+        <span class="right">Remote</span>
+    </div>
+    <div class="row position">
+        <span class="left">Co-founder &amp; CTO</span>
+        <span class="right">2023 &mdash; Present</span>
+    </div>
+    <ul>
+        <li>Co-founded an AI medication-availability platform; live AI voice agents call pharmacies on patients&rsquo; behalf to confirm in-stock prescriptions, replacing hours of phone-tag with a search that returns results in minutes.</li>
+        <li><b>Lead a team of engineers</b> spanning the voice-agent, search-orchestration, data, and frontend pillars; own hiring, technical direction, code review, and cross-team architecture decisions.</li>
+        <li>Architected and shipped the end-to-end stack: a <b>Pipecat / FastAPI voice-agent pipeline</b> on GCP Cloud Run, an <b>AWS Step Functions + Lambda</b> search-orchestration backend, shared <b>Pydantic / Peewee</b> Python packages distributed via AWS CodeArtifact, and patient-facing <b>React / Vite</b> web frontends.</li>
+        <li>Built the experimentation, observability, and CI/CD foundations enabling the team to safely operate live patient-facing AI in production across AWS and GCP.</li>
+    </ul>
+</div>
+
+<!-- ============ Abilitare ============ -->
+<div class="entry">
+    <div class="row">
+        <span class="left">Abilitare</span>
+        <span class="right">Gainesville, FL</span>
+    </div>
+    <div class="row position">
+        <span class="left">Co-founder</span>
+        <span class="right">Jan 2021 &mdash; Present</span>
+    </div>
+    <ul>
+        <li>Building a head-controlled mouse: a behind-the-ear sensor tracks head movement to drive the cursor, giving people with hand disabilities (ALS, quadriplegia, carpal tunnel, spinal-cord injury) hands-free access to computers and smartphones.</li>
+        <li>Won $25,000 in the 2021 UF Big Idea Competition (Warrington College of Business).</li>
+    </ul>
+</div>
+
+<!-- ============ University of Florida ============ -->
+<div class="entry">
+    <div class="row">
+        <span class="left">University of Florida</span>
+        <span class="right">Gainesville, FL</span>
+    </div>
+    <div class="row position">
+        <span class="left">Research Assistant &mdash; Modern Artificial Intelligence and Learning Technologies (MALT) lab</span>
+        <span class="right">Oct 2019 &mdash; May 2021</span>
+    </div>
+    <ul>
+        <li><b>Scientific data compression:</b>
+            <ul>
+                <li>Developed state-of-the-art compression algorithms and <b>autoencoders</b> of high-dimensional physics data for supporting exascale computing at the Princeton Plasma Physics Laboratory.</li>
+            </ul>
+        </li>
+        <li><b>Temporal data &mdash; traffic estimation:</b>
+            <ul>
+                <li>Devised a <b>queue-length prediction</b> algorithm at signalized road intersections.</li>
+                <li>Analysed data from induction-loop sensors for estimation of travel times using <b>platoon matching</b>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="row position">
+        <span class="left">Graduate Assistant &mdash; iHeal lab</span>
+        <span class="right">Jan 2020 &mdash; May 2020</span>
+    </div>
+    <ul>
+        <li><b>Intelligent ICU:</b> implemented <b>pose estimation</b> from RGB and depth images for monitoring patients in the ICU.</li>
+    </ul>
+</div>
+
+<!-- ============ HERE Technologies ============ -->
+<div class="entry">
+    <div class="row">
+        <span class="left">HERE Technologies</span>
+        <span class="right">Mumbai, India</span>
+    </div>
+    <div class="row position">
+        <span class="left">Senior Software Engineer</span>
+        <span class="right">Mar 2019 &mdash; Jul 2019</span>
+    </div>
+    <ul>
+        <li><b>Computer vision:</b>
+            <ul>
+                <li>Developed a rapid prototype for a new product, later released as the <a href="https://www.here.com/platform/location-based-services/live-sense-sdk">HERE LiveSense SDK</a>.</li>
+                <li>Optimized <b>real-time object detection, multi-object tracking</b> and <b>distance estimation from 2d image stream</b>, to work on edge devices with hardware constraints.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="row position">
+        <span class="left">Software Engineer 2</span>
+        <span class="right">Jul 2017 &mdash; Feb 2019</span>
+    </div>
+    <ul>
+        <li><b>Machine learning:</b>
+            <ul>
+                <li>Engineered automated detection of duplicate places in geospatial data.</li>
+                <li>Collaborated with <b>Subject Matter Experts (SMEs)</b> to understand and concretize the problem statement.</li>
+            </ul>
+        </li>
+        <li><b>Full-stack development:</b>
+            <ul>
+                <li>Ideated, designed and implemented a drag-and-drop tool to create domain-specific business rules, using the <b>visual programming</b> paradigm.</li>
+                <li><b>Improved</b> the average turn-around time of a rule by <b>80%</b>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="row position">
+        <span class="left">Intern</span>
+        <span class="right">Jul 2016 &mdash; Dec 2016</span>
+    </div>
+    <ul>
+        <li><b>Backend development:</b> built business rules in <b>Scala</b>.</li>
+    </ul>
+</div>
+
+
+<h2 class="section">Technical Skills</h2>
+<ul class="skills">
+    <li><b>Programming Languages:</b> Python, TypeScript, Java, JavaScript (&amp; HTML+CSS), Scala, SQL, Dart</li>
+    <li><b>AI / ML:</b> LLM agents, voice AI (STT / TTS), Pipecat, PyTorch, Keras, Pandas, NumPy, Sklearn</li>
+    <li><b>Web &amp; Frontend:</b> React, Vite, Vue.js, FastAPI, Flutter, AngularJS (1.x), Tailwind, Radix UI</li>
+    <li><b>Data &amp; Backend:</b> Pydantic, Peewee, Postgres, DynamoDB, Firestore, MongoDB</li>
+    <li><b>Cloud &amp; DevOps:</b> AWS (Lambda, Step Functions, CloudWatch, CodeArtifact, S3), GCP (Cloud Run, Firestore), Docker, Jenkins, GitHub Actions, Git</li>
+    <li><b>Software engineering:</b> agile, CI/CD, A/B experimentation, observability</li>
+</ul>
+
+
+<h2 class="section">Education</h2>
+<ul>
+    <li><b>University of Florida, United States:</b> MS in Computer Science, <b>GPA: 3.79/4.0</b><span style="float:right"><b>Graduated: May 2021</b></span><br>
+        <span class="small"><i>Coursework:</i> Machine Learning, Deep Learning for Computer Graphics, Analysis of Algorithms, Advanced Data Structures, Mathematics for Intelligent Systems</span>
+    </li>
+    <li style="margin-top: 4pt;"><b>BITS Pilani, Hyderabad Campus, India:</b> B.E. in Electrical and Electronics Engineering<span style="float:right"><b>Aug 2013 &mdash; Jul 2017</b></span><br>
+        <span class="small"><i>Coursework:</i> Quantum computing, cryptography</span>
+    </li>
+</ul>
+
+
+<h2 class="section">Publications</h2>
+<ul class="pubs">
+    <li>P. Shah, A. Kanniganti and J. Soumya, &ldquo;Fault-tolerant application specific Network-on-Chip design,&rdquo; 2017 7th International Symposium on Embedded Computing and System Design (ISED), Durgapur, 2017, pp. 1&ndash;5. <b>DOI:</b> <a href="https://doi.org/10.1109/ISED.2017.8303920">10.1109/ISED.2017.8303920</a></li>
+    <li>R. Sengupta, R. R. K. Reddy, P. Shah, A. Rangarajan and S. Ranka, &ldquo;A Platoon Matching Approach for the Estimation of Arterial Travel Time Distributions,&rdquo; 2020 IEEE 23rd International Conference on Intelligent Transportation Systems (ITSC), Rhodes, Greece, 2020, pp. 1&ndash;6. <b>DOI:</b> <a href="https://doi.org/10.1109/ITSC45102.2020.9294449">10.1109/ITSC45102.2020.9294449</a></li>
+</ul>
+
+</body>
+</html>
