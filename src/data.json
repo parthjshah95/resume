@@ -1,12 +1,12 @@
 {
     "name": "PARTH SHAH",
-    "field": "Co-founder @ Abilitare",
+    "field": "Co-founder & CTO @ MedFinder",
     "photo": "me.jpg",
     "intro": [
         "Hi there! Nice to meet you :)",
         "Scroll down to know me better!"
     ],
-    "about": "I love to get involved in the entire lifecycle of a product - from brainstorming ideas, design, implementation, management, marketing to support. At Abilitare, I help build the head-controlled mouse, which is a hands-free alternative for those with hand disabilities to operate computers and smartphones.<br><br> When not helping the disabled gain digital access, I like fooling around with deep learning architectures, cooking and sketching.",
+    "about": "At <a href=\"https://medfinder.com\">MedFinder</a>, I co-founded and lead engineering on an AI-driven medication-availability platform &mdash; our voice agents place live calls to pharmacies so patients can find their meds in stock without spending hours on the phone.<br><br>Earlier I co-founded <a href=\"https://abilitare.com\">Abilitare</a>, where we built a head-controlled mouse that gives people with hand disabilities hands-free access to computers and smartphones.<br><br>When not building healthcare or assistive tech, I like fooling around with deep learning architectures, cooking, and sketching.",
     "resumepdf": "https://github.com/parthjshah95/resume/raw/master/downloads/Resume.pdf",
     "contact":[
         {
@@ -36,6 +36,20 @@
         }
     ],
     "experience":[
+        {
+            "img": "medfinder.png",
+            "institute": "MedFinder (Insito Health)",
+            "link": "https://medfinder.com",
+            "positions": [
+                {
+                    "name": "Co-founder & CTO",
+                    "description": "AI voice agents that find your meds in stock",
+                    "time": "2023 - Present"
+                }
+            ],
+            "place": "Remote",
+            "projects": ["medfinder", "vocalis"]
+        },
         {
             "img": "Abilitare.png",
             "institute": "Abilitare",
@@ -110,6 +124,41 @@
         }
     ],
     "projects": {
+        "medfinder": {
+            "title": "MedFinder",
+            "subtitle": "Insito Health",
+            "link": "https://medfinder.com",
+            "desc": "Co-founded and lead engineering on an AI-driven medication-availability platform. Patients searching for a prescription get our AI voice agents to place live calls to nearby pharmacies on their behalf, confirm in-stock medications, and surface results back in minutes &mdash; saving hours of phone-tag for patients, caregivers, and clinic staff.<br><br>As CTO, I <b>lead a team of engineers</b> spanning the voice-agent, search-orchestration, data, and frontend pillars &mdash; owning hiring, technical direction, code review, and cross-team architecture decisions, while still shipping product code daily.<br><br>I own end-to-end engineering: the real-time voice-agent platform, the search-orchestration backend, shared data models, the patient-facing web app, an internal ops console, and the CI/CD + observability foundations the team runs on. The stack spans AWS (Lambda, Step Functions, DynamoDB, Postgres, CodeArtifact) and GCP (Cloud Run, Firestore), with a multi-repo Python/TypeScript codebase tied together by shared Pydantic DTOs and Peewee ORM packages.",
+            "time": "2023 - Present",
+            "img": {
+                "nano": "medfinder.png",
+                "large": "medfinder.png"
+            },
+            "keywords": [
+                "LLM agents",
+                "voice AI",
+                "healthcare",
+                "real-time"
+            ]
+        },
+        "vocalis": {
+            "title": "Vocalis voice-agent pipeline",
+            "subtitle": "Real-time AI calls to pharmacies",
+            "link": "https://medfinder.com",
+            "desc": "Designed and built the Vocalis pipeline that powers MedFinder's live pharmacy calls. Pipecat + FastAPI on GCP Cloud Run handles real-time STT, LLM-driven dialog, intent extraction, and structured outcome capture across thousands of pharmacy calls per week. Co-developed the provider-manager A/B experimentation framework that lets us iterate on dialog strategies safely against a live patient flow.",
+            "time": "2023 - Present",
+            "img": {
+                "nano": "medfinder.png",
+                "large": "medfinder.png"
+            },
+            "keywords": [
+                "Pipecat",
+                "FastAPI",
+                "Cloud Run",
+                "STT/TTS",
+                "real-time voice"
+            ]
+        },
         "abilitare":{
             "title": "Abilitare",
             "subtitle": "",
@@ -440,9 +489,84 @@
             "label": "2 years"
         },
         {
+            "name": "FastAPI",
+            "percentage": 85,
+            "label": "2 years"
+        },
+        {
+            "name": "Pydantic",
+            "percentage": 90,
+            "label": "2 years"
+        },
+        {
+            "name": "Peewee",
+            "percentage": 75,
+            "label": "2 years"
+        },
+        {
+            "name": "AWS Lambda",
+            "percentage": 85,
+            "label": "2 years"
+        },
+        {
+            "name": "AWS Step Functions",
+            "percentage": 80,
+            "label": "2 years"
+        },
+        {
+            "name": "DynamoDB",
+            "percentage": 70,
+            "label": "2 years"
+        },
+        {
+            "name": "Postgres",
+            "percentage": 75,
+            "label": "2 years"
+        },
+        {
+            "name": "GCP Cloud Run",
+            "percentage": 80,
+            "label": "2 years"
+        },
+        {
+            "name": "Firestore",
+            "percentage": 70,
+            "label": "1 year"
+        },
+        {
+            "name": "Pipecat",
+            "percentage": 80,
+            "label": "1 year"
+        },
+        {
+            "name": "React",
+            "percentage": 75,
+            "label": "2 years"
+        },
+        {
+            "name": "Vite",
+            "percentage": 75,
+            "label": "2 years"
+        },
+        {
+            "name": "TypeScript",
+            "percentage": 80,
+            "label": "2 years"
+        },
+        {
+            "name": "LLM agents",
+            "percentage": 85,
+            "label": "2 years"
+        },
+        {
+            "name": "voice AI",
+            "percentage": 80,
+            "label": "2 years"
+        },
+        {
             "name": "sense of humor",
             "percentage": 95,
-            "label": "26 years"
+            "label": "30 years"
         }
     ],
     "education": [
